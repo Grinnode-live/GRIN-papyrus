@@ -1,513 +1,183 @@
---- Log opened Tue Aug 02 00:00:14 2016
-00:00 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has quit [Client Quit]
-00:03 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has joined #bitcoin-wizards
-00:04 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has quit [Client Quit]
-00:04 -!- BashCo [~BashCo@unaffiliated/bashco] has joined #bitcoin-wizards
-00:08 -!- supasonic [~supasonic@172-11-188-177.lightspeed.rcsntx.sbcglobal.net] has quit [Ping timeout: 240 seconds]
-00:09 < midnightmagic> kanzure: yes.
-00:10 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 265 seconds]
-00:11 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-00:12 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has joined #bitcoin-wizards
-00:14 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has joined #bitcoin-wizards
-00:15 -!- murch [~murch@p4FE3A383.dip0.t-ipconnect.de] has joined #bitcoin-wizards
-00:15 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has quit [Client Quit]
-00:22 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has joined #bitcoin-wizards
-00:23 < kanzure> some other interesting thing from dan:
-00:23 < kanzure> https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/michalevsky
-00:23 < kanzure> "We show that the MEMS gyroscopes found on modern smart phones are sufficiently sensitive to measure acoustic signals in the vicinity of the phone. The resulting signals contain only very low-frequency information (<200Hz). Nevertheless we show, using signal processing and machine learning, that this information is sufficient to identify speaker information and even parse speech. Since iOS and Android require no special permissions to ...
-00:23 < kanzure> ... access the gyro, our results show that apps and active web content that cannot access the microphone can nevertheless eavesdrop on speech in the vicinity of the phone."
-00:24 < fluffypony> clever
-00:25 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has quit [Remote host closed the connection]
-00:25 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 252 seconds]
-00:26 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-00:27 -!- licnep [uid4387@gateway/web/irccloud.com/x-pfxytuwnsxkjqczf] has quit [Quit: Connection closed for inactivity]
-00:28 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has quit [Ping timeout: 240 seconds]
-00:28 -!- shesek [~shesek@bzq-84-110-7-137.red.bezeqint.net] has quit [Read error: Connection reset by peer]
-00:29 < nsh> if you had access to 20 gyros in one room, you could achieve roughly linear increase in resolution
-00:30 < nsh> nontrivial dsp problem though
-00:30 < nsh> (not a nontrivial dsp problem that is unstudied in signals intelligence community)
-00:45 -!- btcdrak [uid165369@gateway/web/irccloud.com/x-aenbxajilvplyfeo] has joined #bitcoin-wizards
-00:48 -!- Alopex [~bitcoin@cyber.dealing.ninja] has quit [Remote host closed the connection]
-00:50 -!- TheSeven [~quassel@rockbox/developer/TheSeven] has quit [Ping timeout: 258 seconds]
-00:50 -!- [7] [~quassel@rockbox/developer/TheSeven] has joined #bitcoin-wizards
-00:50 -!- Alopex [~bitcoin@cyber.dealing.ninja] has joined #bitcoin-wizards
-00:51 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has joined #bitcoin-wizards
-00:58 -!- Giszmo [~leo@ppp-188-174-77-142.dynamic.mnet-online.de] has joined #bitcoin-wizards
-01:02 -!- pro [~pro@unaffiliated/pro] has joined #bitcoin-wizards
-01:12 -!- Alopex [~bitcoin@cyber.dealing.ninja] has quit [Remote host closed the connection]
-01:12 -!- davec [~davec@cpe-24-243-251-52.hot.res.rr.com] has quit [Read error: Connection reset by peer]
-01:13 -!- davec [~davec@cpe-24-243-251-52.hot.res.rr.com] has joined #bitcoin-wizards
-01:14 -!- Alopex [~bitcoin@cyber.dealing.ninja] has joined #bitcoin-wizards
-01:16 -!- binns [sid105317@21/bitcoin/binns] has quit [Ping timeout: 250 seconds]
-01:16 -!- toktok [~textual@87.213.22.16] has joined #bitcoin-wizards
-01:17 -!- go1111111 [~go1111111@104.200.154.22] has quit [Ping timeout: 258 seconds]
-01:17 -!- binns [sid105317@21/bitcoin/binns] has joined #bitcoin-wizards
-01:19 -!- zxzzt [~prod@static-100-38-11-146.nycmny.fios.verizon.net] has quit [Ping timeout: 250 seconds]
-01:19 -!- wallet42 [sid154231@gateway/web/irccloud.com/x-lvtodbiiaxgdcywj] has quit [Read error: Connection reset by peer]
-01:19 -!- r0ach [~r0ach@107-217-214-192.lightspeed.jcvlfl.sbcglobal.net] has quit [Read error: Connection reset by peer]
-01:20 -!- r0ach [~r0ach@107-217-214-192.lightspeed.jcvlfl.sbcglobal.net] has joined #bitcoin-wizards
-01:20 -!- Tenhi [~tenhi@static-ip-69-64-50-196.inaddr.ip-pool.com] has quit [Ping timeout: 260 seconds]
-01:20 -!- wallet42 [sid154231@gateway/web/irccloud.com/x-lmrlymscrrxtwyzk] has joined #bitcoin-wizards
-01:21 -!- zxzzt [~prod@static-100-38-11-146.nycmny.fios.verizon.net] has joined #bitcoin-wizards
-01:21 -!- go1111111 [~go1111111@104.200.154.22] has joined #bitcoin-wizards
-01:23 -!- Tenhi [~tenhi@static-ip-69-64-50-196.inaddr.ip-pool.com] has joined #bitcoin-wizards
-01:38 -!- contrapumpkin [~copumpkin@haskell/developer/copumpkin] has joined #bitcoin-wizards
-01:41 -!- copumpkin [~copumpkin@haskell/developer/copumpkin] has quit [Ping timeout: 244 seconds]
-01:44 < nsh> who will explain this 'Non-interactive three-way diffie hellman.' to me
-01:48 -!- jtimon [~quassel@55.31.134.37.dynamic.jazztel.es] has joined #bitcoin-wizards
-01:48 -!- toktok [~textual@87.213.22.16] has quit [Ping timeout: 252 seconds]
-01:54 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has quit [Ping timeout: 244 seconds]
-02:00 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has joined #bitcoin-wizards
-02:16 -!- toktok [~textual@87.213.22.9] has joined #bitcoin-wizards
-02:23 -!- jtimon [~quassel@55.31.134.37.dynamic.jazztel.es] has quit [Ping timeout: 260 seconds]
-02:24 -!- AusteritySucks [~Austerity@unaffiliated/austeritysucks] has joined #bitcoin-wizards
-02:35 -!- laurentmt [~Thunderbi@80.215.210.48] has joined #bitcoin-wizards
-02:36 -!- laurentmt [~Thunderbi@80.215.210.48] has quit [Client Quit]
-02:40 -!- moa [~kiwigb@opentransactions/dev/moa] has quit [Quit: Leaving.]
-02:42 -!- r0ach [~r0ach@107-217-214-192.lightspeed.jcvlfl.sbcglobal.net] has quit []
-02:45 < Alanius> nsh: you mean the Joux protocol?
-02:46 < nsh> it's something pairing based that Boneh alluded to in the recent dev meeting
-02:46 < nsh> ( http://diyhpl.us/wiki/transcripts/2016-july-bitcoin-developers-miners-meeting/dan-boneh/ )
-02:47 < Alanius> so: Alice, Bob and Charlie all publish their contributions: g^a, g^b, g^c and keep a, b, c secret
-02:47  * nsh nods
-02:47 < Alanius> Alice is able to compute the pairing of Bob and Charlie's contributions: e(g^b, g^c) = e(g,g)^(bc)
-02:47 < Alanius> and she then raises that to her own secret value a
-02:48 < Alanius> essentially the same process happens for Bob and Charlie
-02:48 < nsh> oh, interesting
-02:48 < nsh> why won't it scale beyond three?
-02:48 < nsh> oh right, need more rounds
-02:49 < nsh> if you higher order pairings you could do more parties. hmmm
-02:49 < Alanius> well, maybe there exists a trilinear map (tripling?) e that can take g^b, g^c, g^d to e(g,g,g)^(bcd)
-02:49  * nsh nods
-02:50 < nsh> that's what i should have said, higher order linear maps
-02:50 < Alanius> finding such a map would make you famous :)
-02:50 < nsh> heh heh :)
-02:50 < nsh> my main problem in life is beyond too (in)famous :)
-02:51 < Alanius> I think fhe actually implies multilinear maps, but the problem there is efficiency (or lack thereof)
-02:52 < nsh> right
-02:55 < nsh> it might be possibl--- no, that's a terrible idea. hmmm, maybe it's not
-02:57 < nsh> (it might be possible to hedge up DHKE products while incidentally transacting then use an accumulator structure to launder them periodically. giving folk access to precached shared secrets if they need them for a channel)
-02:57 < nsh> i guess that already happens in elements alpha
-02:58 < nsh> sans the laundering
-02:59 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 240 seconds]
-03:00 < Alanius> wait, what?
-03:01 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-03:03 < nsh> so with confidential transactions you do non-interactive DHKE with each transaction, and this can be used to reclaim space in the range proof for a secure cryptographic messaging channel. this means anyone that's transacted has created a potentially-reusable symmetric cryptographic session
-03:04 < nsh> which is kinda handy i guess. trying to think of other ways that might happen if we moved to something like BLS sigs
-03:05 < nsh> and more speculatively whether you could aggregate the key exchange across a chain of transactions
-03:06 -!- murch [~murch@p4FE3A383.dip0.t-ipconnect.de] has quit [Quit: Leaving.]
-03:07 -!- toktok [~textual@87.213.22.9] has quit [Quit: My Mac has gone to sleep. ZZZzzz…]
-03:07 -!- Transisto2 [~Trans@modemcable252.252-177-173.mc.videotron.ca] has quit [Ping timeout: 276 seconds]
-03:08 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has joined #bitcoin-wizards
-03:18 -!- hashtag_ [~hashtag@cpe-174-97-254-80.ma.res.rr.com] has quit [Ping timeout: 244 seconds]
-03:28 -!- lmatteis [uid3300@gateway/web/irccloud.com/x-myotsxuettqsjdyx] has quit [Ping timeout: 258 seconds]
-03:28 -!- toktok [~textual@87.213.22.9] has joined #bitcoin-wizards
-03:30 -!- lmatteis [uid3300@gateway/web/irccloud.com/x-nhwksiupiyjghlqa] has joined #bitcoin-wizards
-03:34 -!- fabianfabian [~fabianfab@5ED15F42.cm-7-2b.dynamic.ziggo.nl] has joined #bitcoin-wizards
-03:43 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has quit [Ping timeout: 260 seconds]
-03:45 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 240 seconds]
-03:46 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-03:57 -!- JackH_ [~Jack@79-73-188-45.dynamic.dsl.as9105.com] has joined #bitcoin-wizards
-03:57 -!- toktok [~textual@87.213.22.9] has quit [Quit: My Mac has gone to sleep. ZZZzzz…]
-03:57 -!- JackH_ [~Jack@79-73-188-45.dynamic.dsl.as9105.com] has quit [Read error: Connection reset by peer]
-03:59 -!- toktok [~textual@87.213.22.16] has joined #bitcoin-wizards
-04:08 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has quit [Ping timeout: 260 seconds]
-04:23 -!- King_Rex [~King_Rex@unaffiliated/king-rex/x-3258444] has joined #bitcoin-wizards
-04:27 -!- JackH [~Jack@79-73-188-45.dynamic.dsl.as9105.com] has quit [Quit: Leaving]
-04:46 -!- markus-k [~markus-k@designnet.work.de] has joined #bitcoin-wizards
-04:51 -!- toktok [~textual@87.213.22.16] has quit [Quit: My Mac has gone to sleep. ZZZzzz…]
-04:51 -!- paveljanik [~paveljani@unaffiliated/paveljanik] has quit [Quit: Leaving]
-04:55 -!- [Derek] [~derek@unaffiliated/derek/x-8562683] has quit [Ping timeout: 264 seconds]
-04:56 -!- [Derek] [~derek@2605:6400:10:3c9:dfd3:3e96:2608:98a7] has joined #bitcoin-wizards
-04:57 -!- [Derek] is now known as Guest73674
-04:59 -!- fabianfabian [~fabianfab@5ED15F42.cm-7-2b.dynamic.ziggo.nl] has quit [Quit: why]
-04:59 -!- bildramer [~bildramer@2001:0:9d38:90d7:28dd:1902:a1ba:4a97] has joined #bitcoin-wizards
-05:16 -!- toktok [~textual@87.213.22.9] has joined #bitcoin-wizards
-05:20 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has joined #bitcoin-wizards
-05:22 -!- cyphase [~cyphase@unaffiliated/cyphase] has quit [Ping timeout: 258 seconds]
-05:27 -!- cyphase [~cyphase@unaffiliated/cyphase] has joined #bitcoin-wizards
-05:35 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 252 seconds]
-05:36 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-05:56 -!- r0ach [~r0ach@107-217-214-192.lightspeed.jcvlfl.sbcglobal.net] has joined #bitcoin-wizards
-06:02 -!- mkarrer [~mkarrer@142.red-83-47-107.dynamicip.rima-tde.net] has quit [Remote host closed the connection]
-06:03 -!- mkarrer [~mkarrer@142.red-83-47-107.dynamicip.rima-tde.net] has joined #bitcoin-wizards
-06:04 -!- andytoshi [~andytoshi@wpsoftware.net] has quit [Changing host]
-06:04 -!- andytoshi [~andytoshi@unaffiliated/andytoshi] has joined #bitcoin-wizards
-06:08 -!- contrapumpkin is now known as copumpkin
-06:13 -!- johntramp [~john@unaffiliated/johntramp] has quit [Ping timeout: 264 seconds]
-06:13 -!- atgreen [~green@CPE687f74122463-CM00fc8d24cab0.cpe.net.cable.rogers.com] has joined #bitcoin-wizards
-06:25 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has quit [Ping timeout: 244 seconds]
-06:27 -!- AusteritySucks [~Austerity@unaffiliated/austeritysucks] has quit [Ping timeout: 258 seconds]
-06:28 -!- Noldorin [~noldorin@unaffiliated/noldorin] has quit [Ping timeout: 265 seconds]
-06:37 -!- Guyver2 [~Guyver2@guyver2.xs4all.nl] has joined #bitcoin-wizards
-06:39 -!- Noldorin [~noldorin@unaffiliated/noldorin] has joined #bitcoin-wizards
-06:47 -!- shesek [~shesek@bzq-84-110-208-155.cablep.bezeqint.net] has joined #bitcoin-wizards
-06:59 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-07:02 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has quit [Ping timeout: 260 seconds]
-07:09 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has joined #bitcoin-wizards
-07:11 < andytoshi> kanzure: i downloaded that onion link and rehosted it at https://download.wpsoftware.net/bitcoin/wizardry/mimblewimble.txt in case you want to rehost as well. idk if it's correct but it sounds legit. the first bit of it (the OWAS stuff) i had actually come up with a slightly more space-wasting version on my own not too long ago, so this isn't a total crank at least
-07:11 < andytoshi> is this channel mirrored on slack somewhere?
-07:11 -!- edvorg [~edvorg@113.172.154.4] has joined #bitcoin-wizards
-07:12 < pigeons> yeah i think i saw a read only room on slack the one time i went to the "bitcoin core" slack
-07:12 < pigeons> linked to this room
-07:12 < andytoshi> kk. i posted that and immediately a slack link-expander hit my server. (i don't mind obvs for a public room, but it startled me)
-07:13 < andytoshi> the claim of this paper is that he can structure transactions (a) with full OWAS, basically every block is a coinjoin of all its transactions, and (b) such that you can do full validation of the chain without needing all the historic data, basically just the utxoset and a (relatively) small bit of each block
-07:14 < andytoshi> with just discrete logs
-07:15 < andytoshi> i already have a slight improvement i think ... when i was looking into this on my own, i found i could do payment channels .. this jedusor guy seems to just drop all script ability entirely and says "future research" but i think i have a way to do checklocktimeverify without breaking any of his crypto
-07:16 < andytoshi> (basically with the output you sign "after block X, this output should be replaced with this other one, then you do some sort of proof that the other one commits to the same value. just signing with the difference is sufficient)
-07:18 < andytoshi> then i _think_ you can do multisig in the standard schnorr way, though it's a PITA, you've gotta interactively create the rangeproof and stuff (need to look into this more)
-07:23 -!- ruby32 [~ruby32@38.121.165.30] has joined #bitcoin-wizards
-07:24 -!- AusteritySucks [~Austerity@unaffiliated/austeritysucks] has joined #bitcoin-wizards
-07:29 -!- thepumpernickle1 [~duphass@65.78.54.2] has quit [Ping timeout: 258 seconds]
-07:29 -!- thepumpernickle1 [~duphass@65.78.54.2] has joined #bitcoin-wizards
-07:32 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has joined #bitcoin-wizards
-07:40 -!- johntramp [~john@175.111.102.145] has joined #bitcoin-wizards
-07:49 < lmatteis> i love how papers are shared as .txt :)
-07:53 -!- Ylbam [uid99779@gateway/web/irccloud.com/x-idtravdcmcojzdnm] has joined #bitcoin-wizards
-07:57 -!- Aranjedeath [~Aranjedea@unaffiliated/aranjedeath] has joined #bitcoin-wizards
-08:03 -!- toktok [~textual@87.213.22.9] has quit [Quit: My Mac has gone to sleep. ZZZzzz…]
-08:03 -!- supasonic [~supasonic@172-11-188-177.lightspeed.rcsntx.sbcglobal.net] has joined #bitcoin-wizards
-08:04 -!- laurentmt [~Thunderbi@80.215.210.58] has joined #bitcoin-wizards
-08:05 -!- paveljanik [~paveljani@unaffiliated/paveljanik] has joined #bitcoin-wizards
-08:05 -!- laurentmt [~Thunderbi@80.215.210.58] has quit [Client Quit]
-08:09 -!- BashCo [~BashCo@unaffiliated/bashco] has quit [Remote host closed the connection]
-08:15 -!- laurentmt [~Thunderbi@80.215.210.58] has joined #bitcoin-wizards
-08:19 -!- thepumpernickle1 [~duphass@65.78.54.2] has quit [Ping timeout: 244 seconds]
-08:20 -!- thepumpernickle1 [~duphass@65.78.54.2] has joined #bitcoin-wizards
-08:25 -!- jtimon [~quassel@55.31.134.37.dynamic.jazztel.es] has joined #bitcoin-wizards
-08:40 -!- Guest10 [~textual@c-50-184-178-116.hsd1.ca.comcast.net] has joined #bitcoin-wizards
-08:44 -!- Guest10 [~textual@c-50-184-178-116.hsd1.ca.comcast.net] has quit [Client Quit]
-08:51 -!- mdavid613 [~Adium@cpe-172-251-161-231.socal.res.rr.com] has joined #bitcoin-wizards
-09:05 -!- zooko [~user@c-73-229-199-227.hsd1.co.comcast.net] has joined #bitcoin-wizards
-09:11 -!- BashCo [~BashCo@unaffiliated/bashco] has joined #bitcoin-wizards
-09:11 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has quit [Ping timeout: 244 seconds]
-09:11  * nsh blinks
-09:11 -!- laurentmt [~Thunderbi@80.215.210.58] has quit [Quit: laurentmt]
-09:16 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has joined #bitcoin-wizards
-09:17 -!- AusteritySucks [~Austerity@unaffiliated/austeritysucks] has quit [Ping timeout: 258 seconds]
-09:19 -!- Burrito [~Burrito@unaffiliated/burrito] has joined #bitcoin-wizards
-09:26 -!- aalex__ [~aalex@64.187.177.58] has quit [Read error: Connection reset by peer]
-09:27 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-09:27 -!- Guest10 [~textual@96.82.67.198] has joined #bitcoin-wizards
-09:30 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 276 seconds]
-09:31 < nsh> andytoshi,  'So instead, we allow the transaction to sum to a nonzero value k*G, and require a signature of an empty string with this as key, to prove its amount component is zero.'
-09:32 < nsh> i'm not sure how this solves the problem of nonzero sum
-09:32 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-09:33  * nsh continues reading
-09:34 < andytoshi> nsh: if the sum is nonzero this "k*G" value will be k*G + something*H, and it'll be impossible for anyone to sign with that
-09:35 < nsh> oh, hmm
-09:37  * nsh nods
-09:37 -!- zooko [~user@c-73-229-199-227.hsd1.co.comcast.net] has quit [Ping timeout: 250 seconds]
-09:38  * nsh frowns
-09:40 < nsh> i'm sure it must become possible to forge more potential transactions the more aggregation there is. there might then be an attach where after enough blocks if the attacker had retained/obtained enough residual information about r-values used along the way they could recover someone's k
-09:40 < nsh> *attack
-09:41 < andytoshi> that would entail breaking discrete log
-09:42 < andytoshi> no matter how much information an attacker had
-09:42 < nsh> hmm
-09:42 -!- fabianfabian [~fabianfab@5ED15F42.cm-7-2b.dynamic.ziggo.nl] has joined #bitcoin-wizards
-09:45 -!- MoALTz [~no@78-11-183-124.static.ip.netia.com.pl] has joined #bitcoin-wizards
-09:46 < kanzure> andytoshi: did you look at this one? http://diyhpl.us/wiki/transcripts/2016-july-bitcoin-developers-miners-meeting/dan-boneh/
-09:53 < nsh> andytoshi, how is the rangeproof validity is maintained in aggregation?
-09:53 < nsh> how are the ... validities
-09:53 < andytoshi> nsh: every unspent output has a rangeproof. every input is explicit
-09:54 < andytoshi> who cares what the actual history is, that's all you need to know to be assured there is no inflation
-09:54 < nsh> right
-09:54 < nsh> you just need to retain the utxo proofs
-09:54 < nsh> gotta be some way this is sneaky, otherwise it's too good to be true...
-09:55 < andytoshi> hah, yeah, i know the feeling
-09:55 < nsh> :)
-09:55 < andytoshi> so one thing instagibbs pointed out to me offline is that you can lie to new users about the -age- of unspent outputs
-09:55 < nsh> hm, right
-09:56 < andytoshi> like you create an output, spend it, later create the same output again. everyone who was online the whole time knows about the new output. but you tell a new user about the -old- one and not the -new- one
-09:56 < andytoshi> but it's hard for me to understand whether or not this actually matters..
-09:56 < nsh> but you could commit OOB to some timestamping ledger when you first got an output
-09:56 < nsh> and prove it later, i think
-09:56 < andytoshi> yeah, sure, or even a recent blockhash
-09:56  * nsh nods
-09:56 < nsh> biggest loss is script
-09:56 < andytoshi> this would make you more vulnerable to reorgs. would need to think about the tradeoffs here, it seems like this whole scheme is pretty fragile in the case of deep reorgs
-09:57 < nsh> oh yeah
-09:57 < instagibbs> I think it's interesting in any case that you get a rolling UTXO commitment essentially
-09:57 < nsh> i think there would have to be some conservative retention window
-09:57 < nsh> but we have equivalent stuff in bitcoin already for ageing block subsidy, etc.
-09:57 < andytoshi> yeah nsh like a few thousand blocks maybe. hard to say. on bitcoin we've never had more than 30 block reorg, on testnet we've had over 1000 a few times
-09:57 < nsh> so it'll not be any more complex than that really i think
-09:58 < nsh> reorg distribution is a function of PoW and game theory and economics and other stuff not treated
-09:59 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 244 seconds]
-10:00 < nsh> what about range proof reclamation, is that still possible?
-10:00 < nsh> (reuse for messaging/data)
-10:01 < andytoshi> yeah. it's hard to think about .. in bitcoin a 100 block reorg is about twice as hard as a 50 block one, and causes roughly twice the damage. but if there was a cliff where basically the whole system broke, that changes the incentives
-10:01  * nsh nods
-10:01 < andytoshi> nsh: still possible but you've gotta keep it forever cuz most nodes won't
-10:01 < nsh> aye, sure
-10:01 < andytoshi> in elements we use it just for ephemeral information anyway..
-10:01 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-10:02 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has quit [Remote host closed the connection]
-10:03 < nsh> but this means you could build a twister-like ephemeral microblogging / IM into a client for essentially free
-10:03 < andytoshi> yep
-10:03 < nsh> and highly censorship resistant :)
-10:03 < nsh> well, depending on hashpower
-10:03 < nsh> so that's neat :)
-10:04 < nsh> (and dependent on enough nodes for accessibility saturation)
-10:04 < andytoshi> well, publishing stuff is hard .. if you reveal the encryption key that exposes the value
-10:04 < nsh> you can do it for the cost of fees
-10:05 < nsh> with 0 valued transactions, no?
-10:05 < andytoshi> ah, yes
-10:05 < andytoshi> or 1 valued transactions, he gives some reason there not to allow 0-valued outputs
-10:05 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has quit [Ping timeout: 264 seconds]
-10:05 < nsh> right
-10:06 < andytoshi> (because they can be made to sum to 0, and be hidden from some users, and you've got a consensus failure.)
-10:06 < nsh> hmm
-10:06 < nsh> how do you know that/when you have the whole utxo collected from the network?
-10:07 < andytoshi> nsh: when everything adds up to 0, you've got everything
-10:07 < nsh> relative to the most recent block?
-10:07 < nsh> ok
-10:07 < andytoshi> (but if some subset could add up to 0 itself, which can only be done with specially crafted 0-value outputs, then this actually wouldn't do it)
-10:08 < andytoshi> nsh: so i think how this would work is that you do this magic compression thing to get all the blocks up to $tip - 5000 or something, and make sure the utxoset you're given at that block adds up to 0
-10:08 < andytoshi> then for the latest 5000 blocks, you download the entire blocks and play it forward
-10:08  * nsh nods
-10:08 < nsh> there's probably room for some spv trade-off on that parameter too
-10:09 < nsh> or light node
-10:09 < nsh> (at least somewhat better than the degree to which people trust bc.i, etc.)
-10:09 < andytoshi> i think the tradeoff is about reorg resistance
-10:10 < andytoshi> and about how much room you have to be lied to about coin age
-10:10  * nsh nods
-10:11 < nsh> not clear to me yet why only 0 transactions can be split into positive/negative and not any other sum
-10:12 < andytoshi> because only 0-valued outputs can be negated and still be rangeproofed to be in [0, 2^64]
-10:12 < nsh> oh right
-10:12 < nsh> heh
-10:12 -!- c0rw1n is now known as GreenBat
-10:12 < nsh> that's very quirky
-10:12 -!- GreenBat is now known as c0rw1n
-10:12 < nsh> i guess maths can be quirky
-10:14 < nsh> interesting q: '2. We require user to check all k*G values, when in fact all that is needed is that their sum is of the form k*G. Instead of using signatures is there another proof of discrete logarithm that could be combined?
-10:15 < nsh> oh, the badUTXOs DoS is nontrivial too
-10:16 -!- zooko [~user@c-73-217-16-2.hsd1.co.comcast.net] has joined #bitcoin-wizards
-10:16 < andytoshi> mm, that one might actually be trivial, if everyone uses "round numbers" as anchor points you can ask other nodes which utxos in a given block were legit
-10:16 < nsh> any node can poison the set and it's computationally hard to know which tx broke the sum
-10:16 < nsh> hmm
-10:16 < nsh> not sure i follow
-10:16 < andytoshi> like nodes would have the real blockhash then a "pruned blockhash" representing the block as it stood at height 20000 or something
-10:17 < andytoshi> and if a node is suspicious, it can compare its "pruned blockhash" with that of other nodes
-10:17 < nsh> hmmm
-10:18 < andytoshi> (this was the first idea i came up with, maybe it's broken, or maybe there's some better way)
-10:18 < nsh> sounds like it would work, but unsure of interaction complexity vs. penetration of malicious nodes
-10:19 < andytoshi> kanzure: not yet, sorry
-10:19 < kanzure> hmph
-10:21 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has joined #bitcoin-wizards
-10:23 < kanzure> well you could always publish and say "oh also the asset type", if you feel too bad about publishing your draft on this
-10:23 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has quit [Client Quit]
-10:23 < andytoshi> kanzure: my draft on the mimblewimble stuff?
-10:23 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has joined #bitcoin-wizards
-10:24 < andytoshi> i didn't even have a draft, i just had most of the owas stuff in my head :P
-10:24 < kanzure> for some reason i sort of assumed you were working on aggregatable signatures for confidential transactions
-10:24 < andytoshi> no kidding
-10:24 < andytoshi> no, til a week or so ago i thought that'd require pairing .. i maybe talked about it, but i always thought it would require pairing so the result wasn't very interesting to me
-10:27 < nsh> so what has replaced the role of pairing here, exactly?
-10:27 < nsh> it's just pederson to the hilt i guess
-10:27 < andytoshi> hah, yeah, "pedersen to the hilt"
-10:27 < nsh> :)
-10:27 -!- jtimon [~quassel@55.31.134.37.dynamic.jazztel.es] has quit [Ping timeout: 276 seconds]
-10:28 -!- zooko [~user@c-73-217-16-2.hsd1.co.comcast.net] has quit [Ping timeout: 276 seconds]
-10:30 -!- fkinglag [~fkinglag@mn-71-51-159-139.dhcp.embarqhsd.net] has quit [Ping timeout: 276 seconds]
-10:32 -!- gmaxwell [greg@wikimedia/KatWalsh/x-0001] has joined #bitcoin-wizards
-10:53 < kanzure> there is an interesting method for parasitic colored coins that was recently mentioned to me, it's not my construction and i don't know who mentioned it to me, but basically the way it works is that you can use the existence of certain individual UTXOs as a way to store information about the status of the colored coins
-10:56 -!- fkinglag [~fkinglag@mn-71-51-159-139.dhcp.embarqhsd.net] has joined #bitcoin-wizards
-10:59 -!- YouCallItFar [~far@onegrandcircle.com] has left #bitcoin-wizards []
-11:08 -!- dnaleor [~dnaleor@78-23-74-78.access.telenet.be] has quit [Quit: Leaving]
-11:08 -!- laurentmt [~Thunderbi@176.158.157.202] has joined #bitcoin-wizards
-11:09 -!- edvorg [~edvorg@113.172.154.4] has quit [Ping timeout: 244 seconds]
-11:11 -!- maaku_ [~quassel@173-228-107-141.dsl.static.fusionbroadband.com] has joined #bitcoin-wizards
-11:13 < maaku_> kanzure that was from gmaxwell and sipa via me
-11:13 -!- toktok [~textual@120-042-128-083.dynamic.caiway.nl] has joined #bitcoin-wizards
-11:19 -!- laurentmt [~Thunderbi@176.158.157.202] has quit [Quit: laurentmt]
-11:19 -!- Pr0t3us [~Pr0t3us@unaffiliated/pr0t3us] has joined #bitcoin-wizards
-11:21 -!- byteflame [~byteflame@70-89-65-45-little-rock-ar.hfc.comcastbusiness.net] has joined #bitcoin-wizards
-11:25 -!- jtimon [~quassel@55.31.134.37.dynamic.jazztel.es] has joined #bitcoin-wizards
-11:26 -!- chjj_ [~chjj@unaffiliated/chjj] has quit [Quit: null]
-11:29 -!- BitcoinErrorLog [~bitcoiner@c-98-231-56-138.hsd1.fl.comcast.net] has joined #bitcoin-wizards
-11:29 -!- BitcoinErrorLog [~bitcoiner@c-98-231-56-138.hsd1.fl.comcast.net] has quit [Client Quit]
-11:57 -!- Pr0t3us [~Pr0t3us@unaffiliated/pr0t3us] has quit [Remote host closed the connection]
-12:02 -!- supasonic [~supasonic@172-11-188-177.lightspeed.rcsntx.sbcglobal.net] has quit [Ping timeout: 244 seconds]
-12:08 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 265 seconds]
-12:12 -!- zooko [~user@2601:281:8000:8387:60e9:2e7:ca6e:7b6a] has joined #bitcoin-wizards
-12:18 -!- mdavid613 [~Adium@cpe-172-251-161-231.socal.res.rr.com] has quit [Quit: Leaving.]
-12:19 -!- b-itcoinssg [uid41629@gateway/web/irccloud.com/x-khdlbmssssgsiynb] has joined #bitcoin-wizards
-12:24 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-12:31 -!- zooko [~user@2601:281:8000:8387:60e9:2e7:ca6e:7b6a] has quit [Ping timeout: 250 seconds]
-12:34 -!- AusteritySucks [~Austerity@unaffiliated/austeritysucks] has joined #bitcoin-wizards
-12:41 -!- byteflame [~byteflame@70-89-65-45-little-rock-ar.hfc.comcastbusiness.net] has quit [Ping timeout: 244 seconds]
-12:42 -!- ruby32 [~ruby32@38.121.165.30] has quit [Remote host closed the connection]
-12:42 -!- byteflame [~byteflame@70-89-65-45-little-rock-ar.hfc.comcastbusiness.net] has joined #bitcoin-wizards
-12:43 -!- supasonic [~supasonic@172-11-188-177.lightspeed.rcsntx.sbcglobal.net] has joined #bitcoin-wizards
-12:45 -!- Guest10 [~textual@96.82.67.198] has quit [Quit: My Mac has gone to sleep. ZZZzzz…]
-12:54 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has joined #bitcoin-wizards
-13:00 -!- Aranjedeath [~Aranjedea@unaffiliated/aranjedeath] has quit [Quit: Three sheets to the wind]
-13:00 -!- roidster [~chatzilla@71-95-217-105.static.mtpk.ca.charter.com] has joined #bitcoin-wizards
-13:01 -!- roidster is now known as Guest67303
-13:02 -!- Guest67303 is now known as roidster
-13:02 -!- Guest10 [~textual@96.82.67.198] has joined #bitcoin-wizards
-13:02 -!- ruby32 [~ruby32@184.248.6.180] has joined #bitcoin-wizards
-13:02 -!- Guest10 [~textual@96.82.67.198] has quit [Client Quit]
-13:02 -!- Aranjedeath [~Aranjedea@unaffiliated/aranjedeath] has joined #bitcoin-wizards
-13:03 -!- roidster [~chatzilla@71-95-217-105.static.mtpk.ca.charter.com] has quit [Client Quit]
-13:05 -!- roidster [~chatzilla@71-95-217-105.static.mtpk.ca.charter.com] has joined #bitcoin-wizards
-13:08 -!- rusty21 [~rusty@pdpc/supporter/bronze/rusty] has joined #bitcoin-wizards
-13:09 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has quit [Ping timeout: 276 seconds]
-13:16 -!- Guest10 [~textual@172.56.42.221] has joined #bitcoin-wizards
-13:19 -!- Guest10 [~textual@172.56.42.221] has quit [Client Quit]
-13:20 -!- Guest10 [~textual@172.56.42.221] has joined #bitcoin-wizards
-13:20 -!- bsm117532 [~mcelrath@38.121.165.30] has quit [Remote host closed the connection]
-13:20 -!- Guest10 [~textual@172.56.42.221] has quit [Client Quit]
-13:25 -!- bsm117532 [~mcelrath@38.121.165.30] has joined #bitcoin-wizards
-13:29 -!- afk11 [~afk11@unaffiliated/afk11] has quit [Quit: ZNC 1.6.3 - http://znc.in]
-13:30 -!- bsm117532 [~mcelrath@38.121.165.30] has quit [Remote host closed the connection]
-13:30 -!- laurentmt [~Thunderbi@176.158.157.202] has joined #bitcoin-wizards
-13:30 -!- bsm117532 [~mcelrath@38.121.165.30] has joined #bitcoin-wizards
-13:30 -!- bsm117532 [~mcelrath@38.121.165.30] has quit [Remote host closed the connection]
-13:31 -!- bsm117532 [~mcelrath@38.121.165.30] has joined #bitcoin-wizards
-13:40 -!- mdavid613 [~Adium@cpe-104-172-191-85.socal.res.rr.com] has joined #bitcoin-wizards
-13:47 -!- laurentmt [~Thunderbi@176.158.157.202] has quit [Quit: laurentmt]
-13:48 -!- ruby32 [~ruby32@184.248.6.180] has quit [Ping timeout: 260 seconds]
-13:49 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 240 seconds]
-13:49 -!- rusty21 [~rusty@pdpc/supporter/bronze/rusty] has quit [Ping timeout: 244 seconds]
-14:03 -!- BitcoinErrorLog [~bitcoiner@c-98-231-56-138.hsd1.fl.comcast.net] has joined #bitcoin-wizards
-14:07 -!- Guest10 [~textual@172.56.42.221] has joined #bitcoin-wizards
-14:09 -!- Guest10 [~textual@172.56.42.221] has quit [Client Quit]
-14:11 -!- dnaleor [~dnaleor@78-23-74-78.access.telenet.be] has joined #bitcoin-wizards
-14:22 -!- BitcoinErrorLog [~bitcoiner@c-98-231-56-138.hsd1.fl.comcast.net] has quit []
-14:30 -!- Guyver2 [~Guyver2@guyver2.xs4all.nl] has quit [Quit: :)]
-14:31 -!- rasengan [c6085028@pdpc/corporate-sponsor/privateinternetaccess.com/rasengan] has joined #bitcoin-wizards
-14:32 -!- Guest10 [~textual@96.82.67.198] has joined #bitcoin-wizards
-14:33 -!- byteflame [~byteflame@70-89-65-45-little-rock-ar.hfc.comcastbusiness.net] has quit [Ping timeout: 240 seconds]
-14:37 -!- xissburg [~xissburg@unaffiliated/xissburg] has quit [Ping timeout: 265 seconds]
-14:38 -!- jgarzik [~jgarzik@unaffiliated/jgarzik] has quit [Quit: This computer has gone to sleep]
-14:39 -!- MoALTz [~no@78-11-183-124.static.ip.netia.com.pl] has quit [Quit: Leaving]
-14:40 -!- xissburg [~xissburg@unaffiliated/xissburg] has joined #bitcoin-wizards
-14:43 -!- Guest10_ [~textual@96.82.67.198] has joined #bitcoin-wizards
-14:43 -!- Guest10 [~textual@96.82.67.198] has quit [Ping timeout: 244 seconds]
-14:44 < andytoshi> re mimblewimble, it's not quite OWAS because it's possible to separate out the transaction .. you have these k*G values which represent the excess, so you just need to find subsets of inputs and outputs that sum to each one
-14:45 < andytoshi> this is the subset-sum problem which is NP-hard in general, but might not be for many specific cases
-14:46 < andytoshi> having said that, the knowers of specific k*G values can interact to combine their transactions, which would make this much harder. an implementation of mimblewimble should maybe have network messages for doing this
-14:46 < andytoshi> err, not combine transactions, just combine their k*G values. the actual transactions don't need to be involved at all
-14:48 -!- ruby32 [~ruby32@ool-4a59b2e2.dyn.optonline.net] has joined #bitcoin-wizards
-14:53 -!- libertalis [~libertali@c-73-207-38-154.hsd1.ga.comcast.net] has joined #bitcoin-wizards
-14:58 -!- Guest10 [~textual@96.82.67.198] has joined #bitcoin-wizards
-14:59 -!- jtimon [~quassel@55.31.134.37.dynamic.jazztel.es] has quit [Ping timeout: 240 seconds]
-15:01 -!- Guest10_ [~textual@96.82.67.198] has quit [Ping timeout: 252 seconds]
-15:02 < andytoshi> ah, there's a simple fix, publish k1*G and k2, sign with k1*G but make the transaction excess be (k1 + k2)*G
-15:02 < andytoshi> and when combining transactions all the k2's just get added together
-15:05 -!- laurentmt [~Thunderbi@176.158.157.202] has joined #bitcoin-wizards
-15:05 -!- laurentmt [~Thunderbi@176.158.157.202] has quit [Client Quit]
-15:10 -!- byteflame [~byteflame@c-71-238-242-230.hsd1.ar.comcast.net] has joined #bitcoin-wizards
-15:17 -!- fkinglag [~fkinglag@mn-71-51-159-139.dhcp.embarqhsd.net] has quit [Ping timeout: 244 seconds]
-15:20 -!- thepumpernickle1 [~duphass@65.78.54.2] has quit [Ping timeout: 260 seconds]
-15:20 -!- thepumpernickle1 [~duphass@65.78.54.2] has joined #bitcoin-wizards
-15:21 -!- byteflame [~byteflame@c-71-238-242-230.hsd1.ar.comcast.net] has quit [Ping timeout: 244 seconds]
-15:25 -!- fkinglag [~fkinglag@mn-71-51-159-139.dhcp.embarqhsd.net] has joined #bitcoin-wizards
-15:46 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-15:50 -!- Guest10 [~textual@96.82.67.198] has quit [Quit: Textual IRC Client: www.textualapp.com]
-15:50 -!- toktok [~textual@120-042-128-083.dynamic.caiway.nl] has quit [Quit: My Mac has gone to sleep. ZZZzzz…]
-16:01 -!- byteflame [~byteflame@c-71-238-242-230.hsd1.ar.comcast.net] has joined #bitcoin-wizards
-16:02 -!- belcher [~user@unaffiliated/belcher] has joined #bitcoin-wizards
-16:13 -!- schmidty [~schmidty@unaffiliated/schmidty] has joined #bitcoin-wizards
-16:14 -!- zwick [~zwick@fsf/member/zwick] has joined #bitcoin-wizards
-16:15 -!- zwick is now known as ftknox
-16:15 -!- ftknox [~zwick@fsf/member/zwick] has quit [Changing host]
-16:15 -!- ftknox [~zwick@fsf/member/ftknox] has joined #bitcoin-wizards
-16:24 -!- Giszmo1 [~leo@ppp-188-174-68-43.dynamic.mnet-online.de] has joined #bitcoin-wizards
-16:26 -!- Giszmo [~leo@ppp-188-174-77-142.dynamic.mnet-online.de] has quit [Ping timeout: 240 seconds]
-16:29 -!- cyphase [~cyphase@unaffiliated/cyphase] has quit [Ping timeout: 264 seconds]
-16:35 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 252 seconds]
-16:36 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-16:40 -!- cyphase [~cyphase@unaffiliated/cyphase] has joined #bitcoin-wizards
-16:45 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 244 seconds]
-16:46 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-16:49 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 258 seconds]
-16:50 -!- ennui [~user@unaffiliated/ennui] has joined #bitcoin-wizards
-16:51 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-16:54 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 240 seconds]
-16:55 -!- supasonic [~supasonic@172-11-188-177.lightspeed.rcsntx.sbcglobal.net] has quit [Ping timeout: 265 seconds]
-16:56 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-17:02 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 265 seconds]
-17:13 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-17:14 -!- aem [AEM@gateway/shell/elitebnc/x-ywqrtjpwpxahnnng] has quit [Remote host closed the connection]
-17:18 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has joined #bitcoin-wizards
-17:18 -!- priidu [~priidu@unaffiliated/priidu] has joined #bitcoin-wizards
-17:24 -!- AEM [AEM@gateway/shell/elitebnc/x-mbhxtyjmonsqxadw] has joined #bitcoin-wizards
-17:27 -!- byteflame [~byteflame@c-71-238-242-230.hsd1.ar.comcast.net] has quit [Ping timeout: 240 seconds]
-17:29 -!- fabianfabian [~fabianfab@5ED15F42.cm-7-2b.dynamic.ziggo.nl] has quit [Quit: what]
-17:31 -!- pro [~pro@unaffiliated/pro] has quit [Quit: Leaving]
-17:33 -!- dnaleor [~dnaleor@78-23-74-78.access.telenet.be] has quit [Quit: Leaving]
-17:33 -!- ftknox [~zwick@fsf/member/ftknox] has left #bitcoin-wizards ["WeeChat 1.0.1"]
-17:43 -!- dnaleor [~dnaleor@78-23-74-78.access.telenet.be] has joined #bitcoin-wizards
-17:44 -!- veleiro [~veleiro@fsf/member/veleiro] has joined #bitcoin-wizards
-17:45 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 265 seconds]
-17:48 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-17:55 -!- Ylbam [uid99779@gateway/web/irccloud.com/x-idtravdcmcojzdnm] has quit [Quit: Connection closed for inactivity]
-17:59 -!- netzin [~netsin@unaffiliated/jiggalator] has joined #bitcoin-wizards
-18:00 -!- ennui [~user@unaffiliated/ennui] has quit [Ping timeout: 244 seconds]
-18:09 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 244 seconds]
-18:11 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-18:19 -!- jtimon [~quassel@55.31.134.37.dynamic.jazztel.es] has joined #bitcoin-wizards
-18:30 -!- belcher [~user@unaffiliated/belcher] has quit [Quit: Leaving]
-18:33 -!- netzin [~netsin@unaffiliated/jiggalator] has quit [Remote host closed the connection]
-18:42 -!- jtimon_ [~quassel@55.31.134.37.dynamic.jazztel.es] has joined #bitcoin-wizards
-18:42 -!- jtimon_ [~quassel@55.31.134.37.dynamic.jazztel.es] has quit [Remote host closed the connection]
-18:42 -!- King_Rex [~King_Rex@unaffiliated/king-rex/x-3258444] has quit [Remote host closed the connection]
-18:45 -!- netzin [~netsin@unaffiliated/jiggalator] has joined #bitcoin-wizards
-18:45 -!- mdavid613 [~Adium@cpe-104-172-191-85.socal.res.rr.com] has quit [Ping timeout: 244 seconds]
-18:46 -!- mdavid613 [~Adium@cpe-104-172-191-85.socal.res.rr.com] has joined #bitcoin-wizards
-18:50 -!- supasonic [~supasonic@172-11-188-177.lightspeed.rcsntx.sbcglobal.net] has joined #bitcoin-wizards
-18:55 -!- Noldorin [~noldorin@unaffiliated/noldorin] has quit [Quit: My MacBook Pro has gone to sleep. ZZZzzz…]
-19:02 -!- mdavid613 [~Adium@cpe-104-172-191-85.socal.res.rr.com] has quit [Quit: Leaving.]
-19:03 -!- thepumpernickle1 [~duphass@65.78.54.2] has quit [Ping timeout: 244 seconds]
-19:03 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 244 seconds]
-19:06 -!- fkinglag [~fkinglag@mn-71-51-159-139.dhcp.embarqhsd.net] has quit [Ping timeout: 265 seconds]
-19:14 -!- veleiro [~veleiro@fsf/member/veleiro] has quit [Ping timeout: 250 seconds]
-19:17 -!- fkinglag [~fkinglag@mn-71-51-159-139.dhcp.embarqhsd.net] has joined #bitcoin-wizards
-19:20 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-19:20 -!- netzin [~netsin@unaffiliated/jiggalator] has quit []
-19:24 -!- supasonic [~supasonic@172-11-188-177.lightspeed.rcsntx.sbcglobal.net] has quit [Read error: Connection reset by peer]
-19:27 -!- jtimon [~quassel@55.31.134.37.dynamic.jazztel.es] has quit [Ping timeout: 260 seconds]
-19:29 -!- ruby32 [~ruby32@ool-4a59b2e2.dyn.optonline.net] has quit [Remote host closed the connection]
-19:29 -!- ruby32 [~ruby32@ool-4a59b2e2.dyn.optonline.net] has joined #bitcoin-wizards
-19:38 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 258 seconds]
-19:39 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-19:48 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 264 seconds]
-19:54 -!- oneeman [~oneeman@ip254-177-15-186.ct.co.cr] has joined #bitcoin-wizards
-19:57 -!- supasonic [~supasonic@172-11-188-177.lightspeed.rcsntx.sbcglobal.net] has joined #bitcoin-wizards
-20:03 -!- priidu [~priidu@unaffiliated/priidu] has quit [Ping timeout: 244 seconds]
-20:13 -!- AEM is now known as aem
-20:27 -!- execute [~execute@52.68.0.151] has quit [Ping timeout: 244 seconds]
-20:40 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 276 seconds]
-20:41 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-20:59 -!- Aranjedeath [~Aranjedea@unaffiliated/aranjedeath] has quit [Quit: Three sheets to the wind]
-21:00 -!- thepumpernickle1 [~duphass@65.78.54.2] has joined #bitcoin-wizards
-21:02 -!- maaku_ is now known as maaku
-21:08 -!- maaku [~quassel@173-228-107-141.dsl.static.fusionbroadband.com] has quit [Ping timeout: 244 seconds]
-21:08 -!- maaku [~quassel@173-228-107-141.dsl.static.fusionbroadband.com] has joined #bitcoin-wizards
-21:16 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has joined #bitcoin-wizards
-21:30 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 260 seconds]
-21:31 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-21:43 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 258 seconds]
-21:45 -!- Burrito [~Burrito@unaffiliated/burrito] has quit [Quit: Leaving]
-21:46 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-21:50 -!- btcdrak [uid165369@gateway/web/irccloud.com/x-aenbxajilvplyfeo] has quit [Quit: Connection closed for inactivity]
-21:58 -!- murch [~murch@p4FE3A9D5.dip0.t-ipconnect.de] has joined #bitcoin-wizards
-22:27 -!- roidster [~chatzilla@71-95-217-105.static.mtpk.ca.charter.com] has quit [Ping timeout: 240 seconds]
-22:36 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has quit [Ping timeout: 240 seconds]
-22:38 -!- toktok [~textual@120-042-128-083.dynamic.caiway.nl] has joined #bitcoin-wizards
-22:40 -!- oneeman [~oneeman@ip254-177-15-186.ct.co.cr] has quit [Quit: Leaving]
-22:40 -!- bustd_soket [~weechat@unaffiliated/loteriety] has quit [Quit: bustd_soket]
-22:45 -!- toktok [~textual@120-042-128-083.dynamic.caiway.nl] has quit [Ping timeout: 244 seconds]
-23:09 -!- AusteritySucks [~Austerity@unaffiliated/austeritysucks] has quit [Ping timeout: 240 seconds]
-23:22 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has joined #bitcoin-wizards
-23:29 -!- bitcoin-wizards8 [9bc60848@gateway/web/freenode/ip.155.198.8.72] has joined #bitcoin-wizards
-23:30 -!- bitcoin-wizards8 [9bc60848@gateway/web/freenode/ip.155.198.8.72] has quit [Client Quit]
-23:35 -!- jgarzik [~jgarzik@unaffiliated/jgarzik] has joined #bitcoin-wizards
-23:50 -!- BashCo [~BashCo@unaffiliated/bashco] has quit [Remote host closed the connection]
-23:55 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 250 seconds]
-23:56 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-23:59 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has quit [Ping timeout: 244 seconds]
---- Log closed Wed Aug 03 00:00:15 2016
+Source: https://freenode.irclog.whitequark.org/bitcoin-wizards/2016-08-02
+Timezone: UTC
+
+2015-10-30 00:53 sipa changed the topic of #bitcoin-wizards to: This channel is for discussing theoretical ideas with regard to cryptocurrencies, not about short-term Bitcoin development | http://bitcoin.ninja/ | This channel is logged. | For logs and more information, visit http://bitcoin.ninja
+
+02:15 <kanzure> dan boneh things https://twitter.com/kanzure/status/760297796411002880
+04:35 <majorplayer> hi, i have an idea for improving privacy in bitcoin. my friend who knows technology says this channel would have interest http://5pdcbgndmprm4wud.onion/mimblewimble.txt
+04:42 Guest10 is now known as browserfied
+04:47 browserfied is now known as noob33
+04:48 noob33 is now known as fedexit
+05:22 LeMiner is now known as LeMiner2
+05:55 <kanzure> anyone have that file?
+05:55 <kanzure> 80
+07:09 <midnightmagic> kanzure: yes.
+07:23 <kanzure> some other interesting thing from dan:
+07:23 <kanzure> https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/michalevsky
+07:23 <kanzure> "We show that the MEMS gyroscopes found on modern smart phones are sufficiently sensitive to measure acoustic signals in the vicinity of the phone. The resulting signals contain only very low-frequency information (<200Hz). Nevertheless we show, using signal processing and machine learning, that this information is sufficient to identify speaker information and even parse speech. Since iOS and Android require no special permissions to ...
+07:23 <kanzure> ... access the gyro, our results show that apps and active web content that cannot access the microphone can nevertheless eavesdrop on speech in the vicinity of the phone."
+07:24 <fluffypony> clever
+07:29 <nsh> if you had access to 20 gyros in one room, you could achieve roughly linear increase in resolution
+07:30 <nsh> nontrivial dsp problem though
+07:30 <nsh> (not a nontrivial dsp problem that is unstudied in signals intelligence community)
+08:44 <nsh> who will explain this 'Non-interactive three-way diffie hellman.' to me
+09:45 <Alanius> nsh: you mean the Joux protocol?
+09:46 <nsh> it's something pairing based that Boneh alluded to in the recent dev meeting
+09:46 <nsh> ( http://diyhpl.us/wiki/transcripts/2016-july-bitcoin-developers-miners-meeting/dan-boneh/ )
+09:47 <Alanius> so: Alice, Bob and Charlie all publish their contributions: g^a, g^b, g^c and keep a, b, c secret
+09:47 * nsh nods
+09:47 <Alanius> Alice is able to compute the pairing of Bob and Charlie's contributions: e(g^b, g^c) = e(g,g)^(bc)
+09:47 <Alanius> and she then raises that to her own secret value a
+09:48 <Alanius> essentially the same process happens for Bob and Charlie
+09:48 <nsh> oh, interesting
+09:48 <nsh> why won't it scale beyond three?
+09:48 <nsh> oh right, need more rounds
+09:49 <nsh> if you higher order pairings you could do more parties. hmmm
+09:49 <Alanius> well, maybe there exists a trilinear map (tripling?) e that can take g^b, g^c, g^d to e(g,g,g)^(bcd)
+09:49 * nsh nods
+09:50 <nsh> that's what i should have said, higher order linear maps
+09:50 <Alanius> finding such a map would make you famous :)
+09:50 <nsh> heh heh :)
+09:50 <nsh> my main problem in life is beyond too (in)famous :)
+09:51 <Alanius> I think fhe actually implies multilinear maps, but the problem there is efficiency (or lack thereof)
+09:52 <nsh> right
+09:55 <nsh> it might be possibl--- no, that's a terrible idea. hmmm, maybe it's not
+09:57 <nsh> (it might be possible to hedge up DHKE products while incidentally transacting then use an accumulator structure to launder them periodically. giving folk access to precached shared secrets if they need them for a channel)
+09:57 <nsh> i guess that already happens in elements alpha
+09:58 <nsh> sans the laundering
+10:00 <Alanius> wait, what?
+10:03 <nsh> so with confidential transactions you do non-interactive DHKE with each transaction, and this can be used to reclaim space in the range proof for a secure cryptographic messaging channel. this means anyone that's transacted has created a potentially-reusable symmetric cryptographic session
+10:04 <nsh> which is kinda handy i guess. trying to think of other ways that might happen if we moved to something like BLS sigs
+10:05 <nsh> and more speculatively whether you could aggregate the key exchange across a chain of transactions
+11:57 [Derek] is now known as Guest73674
+13:08 contrapumpkin is now known as copumpkin
+14:11 <andytoshi> kanzure: i downloaded that onion link and rehosted it at https://download.wpsoftware.net/bitcoin/wizardry/mimblewimble.txt in case you want to rehost as well. idk if it's correct but it sounds legit. the first bit of it (the OWAS stuff) i had actually come up with a slightly more space-wasting version on my own not too long ago, so this isn't a total crank at least
+14:11 <andytoshi> is this channel mirrored on slack somewhere?
+14:12 <pigeons> yeah i think i saw a read only room on slack the one time i went to the "bitcoin core" slack
+14:12 <pigeons> linked to this room
+14:12 <andytoshi> kk. i posted that and immediately a slack link-expander hit my server. (i don't mind obvs for a public room, but it startled me)
+14:13 <andytoshi> the claim of this paper is that he can structure transactions (a) with full OWAS, basically every block is a coinjoin of all its transactions, and (b) such that you can do full validation of the chain without needing all the historic data, basically just the utxoset and a (relatively) small bit of each block
+14:14 <andytoshi> with just discrete logs
+14:15 <andytoshi> i already have a slight improvement i think ... when i was looking into this on my own, i found i could do payment channels .. this jedusor guy seems to just drop all script ability entirely and says "future research" but i think i have a way to do checklocktimeverify without breaking any of his crypto
+14:16 <andytoshi> (basically with the output you sign "after block X, this output should be replaced with this other one, then you do some sort of proof that the other one commits to the same value. just signing with the difference is sufficient)
+14:18 <andytoshi> then i _think_ you can do multisig in the standard schnorr way, though it's a PITA, you've gotta interactively create the rangeproof and stuff (need to look into this more)
+14:49 <lmatteis> i love how papers are shared as .txt :)
+16:11 * nsh blinks
+16:31 <nsh> andytoshi, 'So instead, we allow the transaction to sum to a nonzero value k*G, and require a signature of an empty string with this as key, to prove its amount component is zero.'
+16:32 <nsh> i'm not sure how this solves the problem of nonzero sum
+16:33 * nsh continues reading
+16:34 <andytoshi> nsh: if the sum is nonzero this "k*G" value will be k*G + something*H, and it'll be impossible for anyone to sign with that
+16:35 <nsh> oh, hmm
+16:37 * nsh nods
+16:38 * nsh frowns
+16:40 <nsh> i'm sure it must become possible to forge more potential transactions the more aggregation there is. there might then be an attach where after enough blocks if the attacker had retained/obtained enough residual information about r-values used along the way they could recover someone's k
+16:40 <nsh> *attack
+16:41 <andytoshi> that would entail breaking discrete log
+16:42 <andytoshi> no matter how much information an attacker had
+16:42 <nsh> hmm
+16:46 <kanzure> andytoshi: did you look at this one? http://diyhpl.us/wiki/transcripts/2016-july-bitcoin-developers-miners-meeting/dan-boneh/
+16:53 <nsh> andytoshi, how is the rangeproof validity is maintained in aggregation?
+16:53 <nsh> how are the ... validities
+16:53 <andytoshi> nsh: every unspent output has a rangeproof. every input is explicit
+16:54 <andytoshi> who cares what the actual history is, that's all you need to know to be assured there is no inflation
+16:54 <nsh> right
+16:54 <nsh> you just need to retain the utxo proofs
+16:54 <nsh> gotta be some way this is sneaky, otherwise it's too good to be true...
+16:55 <andytoshi> hah, yeah, i know the feeling
+16:55 <nsh> :)
+16:55 <andytoshi> so one thing instagibbs pointed out to me offline is that you can lie to new users about the -age- of unspent outputs
+16:55 <nsh> hm, right
+16:56 <andytoshi> like you create an output, spend it, later create the same output again. everyone who was online the whole time knows about the new output. but you tell a new user about the -old- one and not the -new- one
+16:56 <andytoshi> but it's hard for me to understand whether or not this actually matters..
+16:56 <nsh> but you could commit OOB to some timestamping ledger when you first got an output
+16:56 <nsh> and prove it later, i think
+16:56 <andytoshi> yeah, sure, or even a recent blockhash
+16:56 * nsh nods
+16:56 <nsh> biggest loss is script
+16:56 <andytoshi> this would make you more vulnerable to reorgs. would need to think about the tradeoffs here, it seems like this whole scheme is pretty fragile in the case of deep reorgs
+16:57 <nsh> oh yeah
+16:57 <instagibbs> I think it's interesting in any case that you get a rolling UTXO commitment essentially
+16:57 <nsh> i think there would have to be some conservative retention window
+16:57 <nsh> but we have equivalent stuff in bitcoin already for ageing block subsidy, etc.
+16:57 <andytoshi> yeah nsh like a few thousand blocks maybe. hard to say. on bitcoin we've never had more than 30 block reorg, on testnet we've had over 1000 a few times
+16:57 <nsh> so it'll not be any more complex than that really i think
+16:58 <nsh> reorg distribution is a function of PoW and game theory and economics and other stuff not treated
+17:00 <nsh> what about range proof reclamation, is that still possible?
+17:00 <nsh> (reuse for messaging/data)
+17:01 <andytoshi> yeah. it's hard to think about .. in bitcoin a 100 block reorg is about twice as hard as a 50 block one, and causes roughly twice the damage. but if there was a cliff where basically the whole system broke, that changes the incentives
+17:01 * nsh nods
+17:01 <andytoshi> nsh: still possible but you've gotta keep it forever cuz most nodes won't
+17:01 <nsh> aye, sure
+17:01 <andytoshi> in elements we use it just for ephemeral information anyway..
+17:03 <nsh> but this means you could build a twister-like ephemeral microblogging / IM into a client for essentially free
+17:03 <andytoshi> yep
+17:03 <nsh> and highly censorship resistant :)
+17:03 <nsh> well, depending on hashpower
+17:03 <nsh> so that's neat :)
+17:04 <nsh> (and dependent on enough nodes for accessibility saturation)
+17:04 <andytoshi> well, publishing stuff is hard .. if you reveal the encryption key that exposes the value
+17:04 <nsh> you can do it for the cost of fees
+17:05 <nsh> with 0 valued transactions, no?
+17:05 <andytoshi> ah, yes
+17:05 <andytoshi> or 1 valued transactions, he gives some reason there not to allow 0-valued outputs
+17:05 <nsh> right
+17:06 <andytoshi> (because they can be made to sum to 0, and be hidden from some users, and you've got a consensus failure.)
+17:06 <nsh> hmm
+17:06 <nsh> how do you know that/when you have the whole utxo collected from the network?
+17:07 <andytoshi> nsh: when everything adds up to 0, you've got everything
+17:07 <nsh> relative to the most recent block?
+17:07 <nsh> ok
+17:07 <andytoshi> (but if some subset could add up to 0 itself, which can only be done with specially crafted 0-value outputs, then this actually wouldn't do it)
+17:08 <andytoshi> nsh: so i think how this would work is that you do this magic compression thing to get all the blocks up to $tip - 5000 or something, and make sure the utxoset you're given at that block adds up to 0
+17:08 <andytoshi> then for the latest 5000 blocks, you download the entire blocks and play it forward
+17:08 * nsh nods
+17:08 <nsh> there's probably room for some spv trade-off on that parameter too
+17:09 <nsh> or light node
+17:09 <nsh> (at least somewhat better than the degree to which people trust bc.i, etc.)
+17:09 <andytoshi> i think the tradeoff is about reorg resistance
+17:10 <andytoshi> and about how much room you have to be lied to about coin age
+17:10 * nsh nods
+17:11 <nsh> not clear to me yet why only 0 transactions can be split into positive/negative and not any other sum
+17:12 <andytoshi> because only 0-valued outputs can be negated and still be rangeproofed to be in [0, 2^64]
+17:12 <nsh> oh right
+17:12 <nsh> heh
+17:12 c0rw1n is now known as GreenBat
+17:12 <nsh> that's very quirky
+17:12 GreenBat is now known as c0rw1n
+17:12 <nsh> i guess maths can be quirky
+17:14 <nsh> interesting q: '2. We require user to check all k*G values, when in fact all that is needed is that their sum is of the form k*G. Instead of using signatures is there another proof of discrete logarithm that could be combined?
+17:15 <nsh> oh, the badUTXOs DoS is nontrivial too
+17:16 <andytoshi> mm, that one might actually be trivial, if everyone uses "round numbers" as anchor points you can ask other nodes which utxos in a given block were legit
+17:16 <nsh> any node can poison the set and it's computationally hard to know which tx broke the sum
+17:16 <nsh> hmm
+17:16 <nsh> not sure i follow
+17:16 <andytoshi> like nodes would have the real blockhash then a "pruned blockhash" representing the block as it stood at height 20000 or something
+17:17 <andytoshi> and if a node is suspicious, it can compare its "pruned blockhash" with that of other nodes
+17:17 <nsh> hmmm
+17:18 <andytoshi> (this was the first idea i came up with, maybe it's broken, or maybe there's some better way)
+17:18 <nsh> sounds like it would work, but unsure of interaction complexity vs. penetration of malicious nodes
+17:19 <andytoshi> kanzure: not yet, sorry
+17:19 <kanzure> hmph
+17:23 <kanzure> well you could always publish and say "oh also the asset type", if you feel too bad about publishing your draft on this
+17:23 <andytoshi> kanzure: my draft on the mimblewimble stuff?
+17:24 <andytoshi> i didn't even have a draft, i just had most of the owas stuff in my head :P
+17:24 <kanzure> for some reason i sort of assumed you were working on aggregatable signatures for confidential transactions
+17:24 <andytoshi> no kidding
+17:24 <andytoshi> no, til a week or so ago i thought that'd require pairing .. i maybe talked about it, but i always thought it would require pairing so the result wasn't very interesting to me
+17:27 <nsh> so what has replaced the role of pairing here, exactly?
+17:27 <nsh> it's just pederson to the hilt i guess
+17:27 <andytoshi> hah, yeah, "pedersen to the hilt"
+17:27 <nsh> :)
+17:53 <kanzure> there is an interesting method for parasitic colored coins that was recently mentioned to me, it's not my construction and i don't know who mentioned it to me, but basically the way it works is that you can use the existence of certain individual UTXOs as a way to store information about the status of the colored coins
+18:13 <maaku_> kanzure that was from gmaxwell and sipa via me
+20:01 roidster is now known as Guest67303
+20:02 Guest67303 is now known as roidster
+21:44 <andytoshi> re mimblewimble, it's not quite OWAS because it's possible to separate out the transaction .. you have these k*G values which represent the excess, so you just need to find subsets of inputs and outputs that sum to each one
+21:45 <andytoshi> this is the subset-sum problem which is NP-hard in general, but might not be for many specific cases
+21:46 <andytoshi> having said that, the knowers of specific k*G values can interact to combine their transactions, which would make this much harder. an implementation of mimblewimble should maybe have network messages for doing this
+21:46 <andytoshi> err, not combine transactions, just combine their k*G values. the actual transactions don't need to be involved at all
+22:02 <andytoshi> ah, there's a simple fix, publish k1*G and k2, sign with k1*G but make the transaction excess be (k1 + k2)*G
+22:02 <andytoshi> and when combining transactions all the k2's just get added together
+23:15 zwick is now known as ftknox
+
+
