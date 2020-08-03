@@ -1,516 +1,201 @@
---- Log opened Wed Aug 03 00:00:15 2016
-00:08 -!- supasonic [~supasonic@172-11-188-177.lightspeed.rcsntx.sbcglobal.net] has quit [Quit: Leaving]
-00:08 -!- AusteritySucks [~Austerity@unaffiliated/austeritysucks] has joined #bitcoin-wizards
-00:16 -!- BashCo [~BashCo@unaffiliated/bashco] has joined #bitcoin-wizards
-00:24 -!- ennui [~user@unaffiliated/ennui] has joined #bitcoin-wizards
-00:25 -!- laurentmt [~Thunderbi@80.215.210.147] has joined #bitcoin-wizards
-00:26 -!- paveljanik [~paveljani@unaffiliated/paveljanik] has quit [Quit: Leaving]
-00:41 -!- edvorg [~edvorg@113.172.154.4] has joined #bitcoin-wizards
-00:41 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has joined #bitcoin-wizards
-00:42 -!- rusty2 [~rusty@pdpc/supporter/bronze/rusty] has quit [Ping timeout: 258 seconds]
-00:48 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 244 seconds]
-00:48 < nsh> 'Pass the hash for peace, love and security in the quantum computing age -- Boffins smokin' idea to share parts of keys to cook quantum-proof crypto' - http://www.theregister.co.uk/2016/08/02/protect_signatures_from_quantum_computers_shor_say_cryptoboffins/
-00:49 < nsh> -> 'Unconditionally Secure Signatures' - https://eprint.iacr.org/2016/739.pdf
-00:49 < nsh> MAC generalisation using hash fragments
-00:50 -!- [7] [~quassel@rockbox/developer/TheSeven] has quit [Ping timeout: 258 seconds]
-00:50 -!- TheSeven [~quassel@rockbox/developer/TheSeven] has joined #bitcoin-wizards
-00:51 -!- btcdrak [uid165369@gateway/web/irccloud.com/x-uamxzsilsqmqncvu] has joined #bitcoin-wizards
-00:51 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-00:52 -!- priidu [~priidu@unaffiliated/priidu] has joined #bitcoin-wizards
-01:02 -!- laurentmt [~Thunderbi@80.215.210.147] has quit [Quit: laurentmt]
-01:03 -!- edvorg [~edvorg@113.172.154.4] has quit [Remote host closed the connection]
-01:08 -!- edvorg [~edvorg@113.172.154.4] has joined #bitcoin-wizards
-01:12 -!- dan_ [495d8cc9@gateway/web/freenode/ip.73.93.140.201] has joined #bitcoin-wizards
-01:12 -!- dan_ [495d8cc9@gateway/web/freenode/ip.73.93.140.201] has quit [Client Quit]
-01:15 -!- edvorg [~edvorg@113.172.154.4] has quit [Remote host closed the connection]
-01:20 -!- edvorg [~edvorg@113.172.154.4] has joined #bitcoin-wizards
-01:23 -!- laurentmt [~Thunderbi@80.215.210.147] has joined #bitcoin-wizards
-01:37 -!- dnaleor [~dnaleor@78-23-74-78.access.telenet.be] has quit [Quit: Leaving]
-01:39 -!- fabianfabian [~fabianfab@5ED15F42.cm-7-2b.dynamic.ziggo.nl] has joined #bitcoin-wizards
-01:40 -!- dnaleor [~dnaleor@78-23-74-78.access.telenet.be] has joined #bitcoin-wizards
-02:02 -!- Ylbam [uid99779@gateway/web/irccloud.com/x-wwfgwikdpjjnebbp] has joined #bitcoin-wizards
-02:20 -!- edvorg [~edvorg@113.172.154.4] has quit [Remote host closed the connection]
-02:20 -!- bitcoin-wizards5 [b4b7ca66@gateway/web/freenode/ip.180.183.202.102] has joined #bitcoin-wizards
-02:31 -!- bitcoin-wizards5 [b4b7ca66@gateway/web/freenode/ip.180.183.202.102] has quit [Ping timeout: 250 seconds]
-02:46 -!- Ylbam [uid99779@gateway/web/irccloud.com/x-wwfgwikdpjjnebbp] has quit [Ping timeout: 264 seconds]
-02:48 -!- Ylbam [uid99779@gateway/web/irccloud.com/x-zewmibbcbynqswok] has joined #bitcoin-wizards
-02:54 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 250 seconds]
-02:56 -!- licnep [uid4387@gateway/web/irccloud.com/x-kqhbjcwmmejgojyy] has joined #bitcoin-wizards
-02:56 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-03:01 -!- BashCo [~BashCo@unaffiliated/bashco] has quit [Remote host closed the connection]
-03:02 -!- laurentmt [~Thunderbi@80.215.210.147] has quit [Quit: laurentmt]
-03:10 -!- qpm [~qpm@unaffiliated/midnightmagic/bot/qpm] has quit [Ping timeout: 276 seconds]
-03:15 -!- blkdb [~blkdb@2a01:4f8:140:1407::2] has quit [Ping timeout: 264 seconds]
-03:16 -!- sneak [~sneak@unaffiliated/sneak] has quit [Ping timeout: 264 seconds]
-03:16 -!- jonasschnelli [~jonasschn@unaffiliated/jonasschnelli] has quit [Ping timeout: 264 seconds]
-03:17 -!- sneak [~sneak@2a01:4f8:151:84cb:d0cc:242:61a6:bf0d] has joined #bitcoin-wizards
-03:17 -!- sneak [~sneak@2a01:4f8:151:84cb:d0cc:242:61a6:bf0d] has quit [Changing host]
-03:17 -!- sneak [~sneak@unaffiliated/sneak] has joined #bitcoin-wizards
-03:17 -!- blkdb [~blkdb@2a01:4f8:140:1407::2] has joined #bitcoin-wizards
-03:19 -!- jonasschnelli [~jonasschn@2a01:4f8:200:7025::2] has joined #bitcoin-wizards
-03:21 -!- AaronvanW [~ewout@unaffiliated/aaronvanw] has quit [Read error: Connection reset by peer]
-03:24 -!- dasource [uid48409@gateway/web/irccloud.com/x-xokalngyyothkjsn] has joined #bitcoin-wizards
-03:26 -!- AaronvanW [~ewout@198pc231.sshunet.nl] has joined #bitcoin-wizards
-03:26 -!- AaronvanW [~ewout@198pc231.sshunet.nl] has quit [Changing host]
-03:26 -!- AaronvanW [~ewout@unaffiliated/aaronvanw] has joined #bitcoin-wizards
-03:36 -!- laurentmt [~Thunderbi@80.215.210.147] has joined #bitcoin-wizards
-03:37 -!- laurentmt [~Thunderbi@80.215.210.147] has quit [Client Quit]
-03:37 -!- ruby32 [~ruby32@ool-4a59b2e2.dyn.optonline.net] has quit [Ping timeout: 260 seconds]
-03:39 -!- edvorg [~edvorg@113.172.154.4] has joined #bitcoin-wizards
-03:39 -!- execute [~execute@52.68.0.151] has joined #bitcoin-wizards
-03:40 -!- BashCo [~BashCo@unaffiliated/bashco] has joined #bitcoin-wizards
-03:41 -!- ruby32 [~ruby32@184-207-10-82.pools.spcsdns.net] has joined #bitcoin-wizards
-03:42 -!- ruby32 [~ruby32@184-207-10-82.pools.spcsdns.net] has quit [Client Quit]
-03:43 -!- c0rw1n [~c0rw1n@193.47-244-81.adsl-dyn.isp.belgacom.be] has quit [Quit: Konversation terminated!]
-03:43 -!- c0rw1n [~c0rw1n@193.47-244-81.adsl-dyn.isp.belgacom.be] has joined #bitcoin-wizards
-03:44 -!- c0rw1n_ [~c0rw1n@193.47-244-81.adsl-dyn.isp.belgacom.be] has quit [Read error: Connection reset by peer]
-03:44 -!- paveljanik [~paveljani@unaffiliated/paveljanik] has joined #bitcoin-wizards
-03:44 -!- c0rw1n_ [~c0rw1n@193.47-244-81.adsl-dyn.isp.belgacom.be] has joined #bitcoin-wizards
-03:49 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 258 seconds]
-03:51 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-03:54 -!- qpm [~qpm@unaffiliated/midnightmagic/bot/qpm] has joined #bitcoin-wizards
-03:57 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has quit [Ping timeout: 252 seconds]
-03:57 -!- laurentmt [~Thunderbi@80.215.210.147] has joined #bitcoin-wizards
-04:22 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has joined #bitcoin-wizards
-04:28 -!- devylon [~devylon@HSI-KBW-095-208-024-121.hsi5.kabel-badenwuerttemberg.de] has joined #bitcoin-wizards
-04:42 -!- Emcy [~MC@unaffiliated/mc1984] has joined #bitcoin-wizards
-04:42 -!- roidster [~chatzilla@71-95-217-105.static.mtpk.ca.charter.com] has joined #bitcoin-wizards
-04:42 -!- roidster is now known as Guest38856
-04:42 -!- libertalis [~libertali@c-73-207-38-154.hsd1.ga.comcast.net] has quit [Read error: Connection reset by peer]
-04:44 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 250 seconds]
-04:46 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-04:51 -!- lmacken [~lewk@fedora/lmacken] has joined #bitcoin-wizards
-05:07 -!- Guest38856 [~chatzilla@71-95-217-105.static.mtpk.ca.charter.com] has quit [Quit: ChatZilla 0.9.92 [SeaMonkey 2.39/20151103191810]]
-05:16 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has quit [Ping timeout: 258 seconds]
-05:19 -!- King_Rex [~King_Rex@unaffiliated/king-rex/x-3258444] has joined #bitcoin-wizards
-05:21 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-05:22 -!- b-itcoinssg [uid41629@gateway/web/irccloud.com/x-khdlbmssssgsiynb] has quit [Quit: Connection closed for inactivity]
-05:27 -!- hashtag_ [~hashtag@cpe-174-97-254-80.ma.res.rr.com] has joined #bitcoin-wizards
-05:28 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 264 seconds]
-05:30 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-05:30 -!- devylon [~devylon@HSI-KBW-095-208-024-121.hsi5.kabel-badenwuerttemberg.de] has quit [Quit: Lingo: www.lingoirc.com]
-05:31 -!- fabianfabian [~fabianfab@5ED15F42.cm-7-2b.dynamic.ziggo.nl] has quit [Quit: why]
-05:31 -!- edvorg [~edvorg@113.172.154.4] has quit [Remote host closed the connection]
-05:41 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 276 seconds]
-05:41 -!- aalex__ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-06:04 -!- blackwraith [~priidu@unaffiliated/priidu] has joined #bitcoin-wizards
-06:06 -!- priidu [~priidu@unaffiliated/priidu] has quit [Ping timeout: 260 seconds]
-06:09 -!- blackwraith [~priidu@unaffiliated/priidu] has quit [Ping timeout: 260 seconds]
-06:19 -!- skyraider [uid41097@gateway/web/irccloud.com/x-bknnswquleyykzrf] has joined #bitcoin-wizards
-06:21 -!- xissburg [~xissburg@unaffiliated/xissburg] has quit [Quit: leaving]
-06:24 -!- byteflame [~byteflame@70-89-65-45-little-rock-ar.hfc.comcastbusiness.net] has joined #bitcoin-wizards
-06:27 -!- xissburg [~xissburg@unaffiliated/xissburg] has joined #bitcoin-wizards
-06:33 -!- laurentmt1 [~Thunderbi@80.215.234.51] has joined #bitcoin-wizards
-06:34 -!- laurentmt [~Thunderbi@80.215.210.147] has quit [Ping timeout: 258 seconds]
-06:34 -!- laurentmt1 is now known as laurentmt
-06:35 -!- jonasschnelli [~jonasschn@2a01:4f8:200:7025::2] has quit [Changing host]
-06:35 -!- jonasschnelli [~jonasschn@unaffiliated/jonasschnelli] has joined #bitcoin-wizards
-06:45 -!- Noldorin [~noldorin@unaffiliated/noldorin] has joined #bitcoin-wizards
-06:47 -!- licnep [uid4387@gateway/web/irccloud.com/x-kqhbjcwmmejgojyy] has quit [Quit: Connection closed for inactivity]
-06:52 -!- Jaamg [jhpiloma@brute.org.aalto.fi] has joined #bitcoin-wizards
-06:53 -!- Guyver2 [~Guyver2@guyver2.xs4all.nl] has joined #bitcoin-wizards
-07:12 -!- AusteritySucks [~Austerity@unaffiliated/austeritysucks] has quit [Ping timeout: 240 seconds]
-07:17 -!- jtimon [~quassel@55.31.134.37.dynamic.jazztel.es] has joined #bitcoin-wizards
-07:17 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has joined #bitcoin-wizards
-07:32 -!- JackH [~Jack@79-73-188-45.dynamic.dsl.as9105.com] has joined #bitcoin-wizards
-07:40 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has quit [Ping timeout: 258 seconds]
-07:44 -!- shesek [~shesek@bzq-84-110-208-155.cablep.bezeqint.net] has quit [Ping timeout: 244 seconds]
-08:06 -!- AusteritySucks [~Austerity@unaffiliated/austeritysucks] has joined #bitcoin-wizards
-08:10 -!- AusteritySucks [~Austerity@unaffiliated/austeritysucks] has quit [Ping timeout: 244 seconds]
-08:14 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 244 seconds]
-08:21 -!- JackH [~Jack@79-73-188-45.dynamic.dsl.as9105.com] has quit [Ping timeout: 244 seconds]
-08:23 -!- AusteritySucks [~Austerity@unaffiliated/austeritysucks] has joined #bitcoin-wizards
-08:30 < amiller> does this mimble wimble thing really work
-08:30 < amiller> i really wish we could talk about these things in terms of zk proofs rather than signatures with related keys
-08:30 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-08:30 < andytoshi> amiller: i think it works. agreed, would be easier to talk about in terms of zk proofs (tho this would require reframing some things)
-08:32 < amiller> can you summarize the scheme with your privacy improvement inlined?
-08:32 < andytoshi> i think so .. one sec
-08:33 < andytoshi> so to start, every utxo has a CT pedersen commitment associated to it, vH + rG, and `r` is the secret blinding factor that only the owner knows (nobody else, no auditors, etc)
-08:34 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has joined #bitcoin-wizards
-08:34 < andytoshi> if i send you money, i produce a half-transaction that has everything except your outputs in it (so one change and some inputs), and i also give you the (r, v) pair such that (output commit - input commits = vH + rG.
-08:35 -!- JackH [~Jack@79-73-188-45.dynamic.dsl.as9105.com] has joined #bitcoin-wizards
-08:35 -!- thepumpernickle1 [~duphass@65.78.54.2] has quit [Ping timeout: 260 seconds]
-08:35 < andytoshi> you, the recipient, then add your own outputs so that (output commits - input commits = kG) for some k that you know. split k into k = k1 + k2. then publish a signature with k1G as well as k2
-08:36 -!- thepumpernickle1 [~duphass@65.78.54.2] has joined #bitcoin-wizards
-08:36 < andytoshi> so k1G has a sig which is a zk proof that you know k1, and k2 is a full-knowledge proof that you know k2, and this proves that the excess kG does not have any H component, which in turn proves that the whole transaction adds up
-08:37 < andytoshi> does this make sense so far? can you see a clean way to discribe this whole tx in terms of zk proofs (i do not, it really seems like this interaction is necessary but only the participants can be usre that this interaction happened..)
-08:37 -!- oneeman [~oneeman@ip254-177-15-186.ct.co.cr] has joined #bitcoin-wizards
-08:38 < amiller> hm
-08:38 < andytoshi> i guess, i give *you* a full-knowledge proof that i know the blinding key for (change minus inputs). then you produce a zk proof that you know the blinding key for the entire (outputs - inputs)
-08:39 < andytoshi> "full-knowledge proof" is a term i just made up for my giving you the values .. i can stop using this if you want
-08:39 < amiller> seems ok, i also don't know better notation
-08:39 < amiller> in general there are these sort of multi-prover zk proofs and i have no notation for htem
-08:39 < amiller> like i prove one thing, you adapt that proof plus add more to it to make a related proof but you didn't know the whole witness
-08:40 < andytoshi> yeah
-08:40 < andytoshi> so it's really not publicly verifiable that i did a key handoff here, only the recipient can verify this. what *is* publicly verifiable is that no coins were created or destroyed certainly
-08:40 < amiller> how is this different than CT?
-08:40 < andytoshi> but there's also something stronger being shown, if i keep my own blinding factors secret then everyone knows there's no theft
-08:40 < amiller> i guess going in i thought this was going to be comparable to ringCT
-08:40 < andytoshi> no, ringCT is actually orthogonal (though technically i have zero idea how to combine these)
-08:41 < andytoshi> CT just uses the blinding factors as blinding factors. this scheme uses the blinding factors for authentication. that's the moral difference
-08:41 < andytoshi> (it then uses this fact to get OWAS and massive pruning while still allowing full verification)
-08:41 < amiller> how does it give any better pruning than CT
-08:42 < andytoshi> CT doesn't give any pruning at all, you've gotta keep every output and every rangeproof around if you want to be able to reverify the chain
-08:42 < kanzure> andytoshi: you should still look at http://diyhpl.us/wiki/transcripts/2016-july-bitcoin-developers-miners-meeting/dan-boneh/
-08:42 < andytoshi> this literally lets you delete every spent output
-08:42 -!- JackH [~Jack@79-73-188-45.dynamic.dsl.as9105.com] has quit [Ping timeout: 264 seconds]
-08:42 < andytoshi> thanks kanzure, it's open, i will
-08:43 < amiller> "reverify the chain" ok
-08:43 < andytoshi> amiller: ...and if you give the chain to somebody, without any spent outputs or any input refs even, they can still verify that along the entire history no theft or inflation happened
-08:43 < andytoshi> (assuming everyone kept their keys secret, "theft" means something technical here..)
-08:44 < amiller> this seems like an interesting and relevant security goal but i don't understand it clearly yet, we can talk about it independently of the scheme though
-08:44 < amiller> so like, a new node that wants to start mining and verify the whole chain
-08:44 < amiller> without just relying on SPV security
-08:44 < andytoshi> yeah, i'd like to talk about this. i'm trying to understand the security model here.
-08:44 < andytoshi> right
-08:44 < amiller> it's safe to ignore some information that was originally included?
-08:44 < andytoshi> yes. what this new node cares about is knowing the current chainstate (utxo set)
-08:45 < andytoshi> suppose the node *does not* care how this utxoset came to be, only that somehow the coins were always passed along honestly
-08:45 < amiller> and i can verify that this utxo set doesn't reflect any invalid transitions like a block that ignores some previous transactions
-08:45 < andytoshi> exactly
-08:46 < andytoshi> there exists a path of handoffs (where "handoff" is something we'd have to describe more precisely, but it's done by one of the transactions i described above) from coinbase inputs to the current utxos
-08:47 < instagibbs> If you don't validate all of the blocks' contents, it's possible there is an entirely different utxo set that also seems valid. Peers can tell you about these alternative sets of utxo though.
-08:48 < andytoshi> instagibbs: what do you mean?
-08:48 < instagibbs> (thought we discussed this already but I'll rexplain)
-08:48 < andytoshi> if you mean peers can give you different merkle paths for the same utxos, that doesn't give a different utxoset
-08:48 < andytoshi> that just attaches the utxoset to the blockchain in a different way
-08:48 < instagibbs> or different utxos
-08:49 < instagibbs> like, imagine complete disjoint post-genesis histories
-08:49 < andytoshi> kk pls explain
-08:49 < amiller> i feel like there's something implicit missing, like we're implicitly assuming SPV already or osmething
-08:49 < amiller> like i think there's something lurking here that makes the efficiency claim vs CT not actually present
-08:49 < andytoshi> instagibbs: this scheme does not allow that, all the coinbase inputs are explicit
-08:49 < andytoshi> amiller: this has completely different goals than CT
-08:49 < andytoshi> CT was just about hiding amounts, this is about collapsing history
-08:50 < instagibbs> andytoshi, sorry can you explain why that would stop that
-08:50 < amiller> what is collapsing history? so far everything you described sounds like CT
-08:50 < instagibbs> merkle trees don't prove anything about not having two different spends of the same outputs
-08:50 < andytoshi> instagibbs: the blockchain defines a single set of inputs. the inputs are part of the history. therefore you cannot have disjoint histories
-08:50 < amiller> the outputs are represented as commitments, the sender/receiver together make a transaction or pair of half-transactions that spend some old outputs and create so new outputs
-08:50 < andytoshi> instagibbs: no, but the algebra prevents that (unless the "same output" appeared twice)
-08:51 < andytoshi> amiller: yes, i haven't gotten to the collapsing history yet
-08:51 < andytoshi> but nor have i made any claims of space savings yet
-08:51 < instagibbs> genesis block makes 1 blinded output, following block has 2 transactions(ignore the fact that we can decduce double-spending from pure numbers here))
-08:51 < andytoshi> i'm just trying to reframe this specific part in a way that you like, because it's critical to everything else
-08:51 < amiller> ok, i think i understand the signature scheme well enough
-08:52 -!- skyraider [uid41097@gateway/web/irccloud.com/x-bknnswquleyykzrf] has quit [Quit: Connection closed for inactivity]
-08:52 < instagibbs> one transaction has 2 outputs, the other has 1, let's say. So they're unique in blinding factors and so on.
-08:52 < andytoshi> amiller: kk, so the next part is OWAS, which is pretty straightforward, you can just put transactions inputs and outputs together, then the sum of all outputs minus all inputs will be the sum of all these excess k*G values
-08:52 -!- NewLiberty [~NewLibert@2602:306:b8e0:8160:95f0:e47a:e341:4811] has joined #bitcoin-wizards
-08:52 < instagibbs> So I reveal one history to you, and hide the other. The math will work out.
-08:52 < andytoshi> amiller: so you keep both k1G + sig, and you add the explcit k2s, and this is OWAS
-08:53 < instagibbs> I have no idea what this means for the security model in reality
-08:53 < andytoshi> instagibbs: lemme think about this, this seems very serious
-08:54 < instagibbs> I mean it's the same problem we have in Bitcoin... but with our scheme we get strong guarantees knowing that it is at least *a* valid non-inflationary history
-08:54 < instagibbs> our meaning wimble
-08:55 < andytoshi> yeah, sure, but we may have consensus disagreement between peers
-08:55 < instagibbs> but peers may be on different histories, on same chain header. Peers can tell each other. I'm not sure how to converge
-08:55 < andytoshi> (which might be recoverable, maybe inputs need to have explicit merkle paths and this does it)
-08:55 -!- zooko [~user@73.95.137.19] has joined #bitcoin-wizards
-08:55 < andytoshi> no, that's not sufficient..
-08:55 < instagibbs> yeah I thought about that too, then discounted it, but can't immediately recall
-08:56 < kanzure> andytoshi: re: OWAS things, the dan boneh transcript covers this in some gorey detail, but also it was covered near the bottom of https://bitcoincore.org/logs/2016-05-zurich-meeting-notes.html
-08:56 -!- JackH [~Jack@79-73-188-45.dynamic.dsl.as9105.com] has joined #bitcoin-wizards
-08:56 < kanzure> starting near the section called "Schnorr stuff and signature aggregation" (or just search for "OWAS")
-08:58 < instagibbs> so you'd need to figure out where the first violation of the "only one spend of one output" rule is broken, invalidate back to that block, and sync from there, or something.
-08:58 < andytoshi> instagibbs: you don't need to multispend any outputs to do this tho
-08:58 < instagibbs> oh hm?
-08:58 < andytoshi> instagibbs: you create three outputs with commitments C1, C2, C1 + C2. when IBDing you reveal C1 and C2 to some peers, C1 + C2 to others
-08:59 < instagibbs> err right
-08:59 < andytoshi> now you've IBD'd peers in a way that they disagree on the utxo set-
-08:59 < instagibbs> well there are inputs being spent twice, in general
-08:59 < instagibbs> but yes we care about new outputs matching up
-08:59 < andytoshi> peers who were online at the time would detect this, but that's tendermint security model
-08:59 < andytoshi> instagibbs: what do you mean by inputs being spent twice in general?
-09:00 < instagibbs> I agree with what you're saying, it's not impt
-09:00 < instagibbs> Nodes would have to reject a chain once they discover the utxo set conflicts with another one
-09:00 < andytoshi> instagibbs: ok, maybe the outputs need to be in a merkle sum tree
-09:00 < andytoshi> so you can't do this C1, C2, C1 + C2 trick
-09:02 < instagibbs> Well, there is already DoS vector of simply being fed bad utxo set
-09:02 < andytoshi> yes that's fine, there are ways around that (basically asking peers for a quorum on what the utxos in each block actually ought to be)
-09:02 < instagibbs> At least with this attack it would require miners making "legitimate" parallel histories
-09:03 < instagibbs> which can/will invalidate huge swaths of blocks if caught
-09:03 < andytoshi> yes, that's worse, because then it's not detectable
-09:03 < andytoshi> but using a merkle sum tree prevents it i thin
-09:03 -!- zooko` [~user@2601:281:8000:8387:60e9:2e7:ca6e:7b6a] has joined #bitcoin-wizards
-09:05 < andytoshi> oh, no, you can fool a merkle sum tree by putting negative outputs in. you just never reveal these to anyone
-09:05 < instagibbs> I was hoping peer gossip would be just as effective as spreading the header chain, but now not sure at all
-09:06 < andytoshi> in practice it might be
-09:06 < andytoshi> but this is a weird security model
-09:06 -!- zooko [~user@73.95.137.19] has quit [Ping timeout: 276 seconds]
-09:07 < andytoshi> you can amplify from peer gossip to SPV by having miners commit to the current utxoset in every block
-09:08 < andytoshi> so you have full security in knowing that no invalid transactions have occured, but only SPV security that your history is the one that everyone else is using
-09:08 < andytoshi> (which actually, might be exactly what you want, the blockheaders define the "history that everyone else is using" anyway..)
-09:09 < instagibbs> Hmm, yes I was hoping the gossip would be more holistic, but I think it's looking more fraud-proofy considering peers wouldn't even care about bad branches
-09:10 -!- fractex [~fractex@2602:306:cc08:25c0:bb7c:8a18:e13b:9c2d] has joined #bitcoin-wizards
-09:12 < andytoshi> i don't like gossip or fraud proofs, both of these can be censored from a peer who is surrounded during IBD (and maybe the peer doesn't know to ask for it later so the effect is permanent)
-09:12 -!- newbie [~kvirc@80.203.141.26] has joined #bitcoin-wizards
-09:12 < instagibbs> Yes
-09:13 < instagibbs> So it sort of reminds me of a rolling utxo commitment
-09:13 < instagibbs> but you must assume miners all start from beginning
-09:13 < kanzure> without gossip how are you doing initial block download?
-09:14 < instagibbs> kanzure, that's what I mean, the gossip isn't as useful as it is for finding the best chain
-09:15 < instagibbs> but the gossip for wimble will never prove to the user they are on the right chain
-09:15 < kanzure> is this concern about lack of diff and lack of knowing where the problem is in the data set?
-09:15 < instagibbs> s/right/valid/
-09:16 < andytoshi> kanzure: no the problem is that there can be multiple valid histories associated to the same blockheader chain
-09:16 < instagibbs> It's the lack of knowing if you're on a valid chain/utxo set.
-09:17 < andytoshi> so you can make a "randomized merkle-sum tree" which avoids this problem i think
-09:17 < andytoshi> each internal node commits to the sum H(L)L + H(R)R where L, R are its two child nodes
-09:18 < andytoshi> now if you have C1, C2, C1 + C2 in the same merkle tree there is no way to come up with extra branches that will hide this fact
-09:19 < andytoshi> ..has anyone heard of this construction before? i just made it up..
-09:20 < iddo> if you have utxoset in every block then you can "collapse" the history by trimming everything except the last k blocks (say k=1000), are you guys suggesting a way to collapse the history that gives better security guarantees than this simple approach?
-09:20 < kanzure> iddo: http://diyhpl.us/~bryan/papers2/bitcoin/mimblewimble.txt
-09:20 < andytoshi> iddo: yes, certainly, in that case you can literally make up the entire history before the last k blocks
-09:21 < andytoshi> or make up no history, just say "the chainstate was this back then, trust me"
-09:22 -!- mdavid613 [~Adium@cpe-104-172-191-85.socal.res.rr.com] has joined #bitcoin-wizards
-09:22 < iddo> what's the security guarantees that you want to have?
-09:22 < instagibbs> andytoshi, the attacker could put C1, C2 in block 2, and C1+C2 in block 3?
-09:22 < instagibbs> Originally I described the attack as odd/even blocks, to make it clear they could be anywhere
-09:23 < instagibbs> iddo, we would like full node security without downloading the entire chain :)
-09:24 -!- Tiraspoll [~tiraspol@179.132.26.37.dyn.idknet.com] has joined #bitcoin-wizards
-09:25 -!- maaku [~quassel@173-228-107-141.dsl.static.fusionbroadband.com] has left #bitcoin-wizards ["http://quassel-irc.org - Chat comfortably. Anywhere."]
-09:26 < andytoshi> instagibbs: well you can always make the root of the tree have as children the "real" root as well as the previous block's root, so they are all connected
-09:28 < andytoshi> but i'm unsure now what this randomized merkle sum tree actually gets you though, i'm confused again
-09:29  * andytoshi goes for a run
-09:29 < instagibbs> yeah good idea, cheers
-09:29 < iddo> with the simple approach you'd get say k=1000 PoW confirmations that the utxoset is in consensus, you claim that you can verify the history from genesis after trimming the history?
-09:30 < andytoshi> iddo: yes, kanzure posted a link
-09:30 < iddo> btw you can do probabilistic proof that the utxoset is verified from genesis, but it isn't practical
-09:31 < kanzure> instagibbs: for full node security without downloading and verifying the entire chain, you should probably work backwards from full security and then figure out what you can add to that scenario, until you work backwards to something that roughly approximates the set of features you prefer a full node to have.
-09:32 < kanzure> and ideally without saying "turn the entire system into a giant zk-snark and just query a bunch of small proofs and let the proofs battle each other for supremacy"
-09:36 -!- aalex_ [~aalex@64.187.177.58] has joined #bitcoin-wizards
-09:36 -!- laurentmt [~Thunderbi@80.215.234.51] has quit [Quit: laurentmt]
-09:38 -!- aalex__ [~aalex@64.187.177.58] has quit [Ping timeout: 250 seconds]
-09:40 < gmaxwell> Most bitcoin technically sophicated hacker we've seen yet? https://www.reddit.com/r/Bitcoin/comments/4vykkr/1000_btc_giveaway_from_your_friend_rekcahxfb/
-09:40 -!- mdavid613 [~Adium@cpe-104-172-191-85.socal.res.rr.com] has quit [Quit: Leaving.]
-09:41 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 250 seconds]
-09:41 < Tiraspoll> gmaxwell https://bitcointalk.org/index.php?topic=327178.msg3521657#msg3521657
-09:41 < Tiraspoll> the coins are from here
-09:41 < Tiraspoll> not related to finex
-09:41 < Tiraspoll> 2013 address
-09:42 -!- zooko` is now known as zooko
-09:42 < gmaxwell> cool.
-09:44 -!- mdavid613 [~Adium@cpe-104-172-191-85.socal.res.rr.com] has joined #bitcoin-wizards
-09:47 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-09:57 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 260 seconds]
-10:03 < andytoshi> instagibbs: ok, so forget all that merkle sum stuff. the only thing an attacker can do with your attack is split consensus; he can't steal coins or inflate or anything (he can only split his own coins, since he'd have to rangeproof the split). so add a commit to the utxoset in each block, now such a consensus split is trivially detectable (and the longest-chain rule can take care of it)
-10:04 < andytoshi> so you have full security knowing the utxoset up to how the coins are split up (and their age), which means knowing the utxoset up to ownership, and SPV security of the exact split (i.e. whether you are on the consensus history)
-10:04 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has quit [Ping timeout: 260 seconds]
-10:04 < andytoshi> but you already only have SPV security that you're on the consensus history, that's more or less what SPV security means
-10:08 < gmaxwell> it is a little obnoxious that a summary-verifier could end up on a history that had temporary theft but which was made whole at the end, while a full verifier would reject that history.
-10:08 < gmaxwell> you could say that the full verifier should reorg to accept it too, since the end result is the same-- but that only makes sense if the only enforced rules are the rules enforcable by summary verification.
-10:11 -!- MaxSan_ [~one@185.103.96.151] has joined #bitcoin-wizards
-10:12 < andytoshi> gmaxwell: well remember that the blockheaders untimately do commit to everything
-10:12 < iddo> not clear if you're trimming data forever, or just having a method to provide SPV proofs, if you trim forever then you're not protected against reversal of history of length greater than where you trimmed?
-10:12 < andytoshi> so if there really are alternate histories like this they will have alternate blockchains
-10:12 < instagibbs> I'm thinking along the lines of allowing multiple histories, even invalid transactions. If you had a conflicting utxo tie-breaking rule, nodes could converge by just sharing what they know, much like sharing block headers today..
-10:12 -!- ennui [~user@unaffiliated/ennui] has quit [Ping timeout: 244 seconds]
-10:12 < andytoshi> iddo: correct, you're basically screwed if you reorg past where you trimmed (you'll have to find the data somewhere)
-10:12 < andytoshi> iddo: but the security here is much stronger than SPV
-10:13 < instagibbs> given a proper utxo set you know there's no inflation, and you can be told about better histories by a single honest peer.
-10:13 < andytoshi> instagibbs: that seems very hard to do, which history is "better"?
-10:13 < instagibbs> yes, that's the nut to crack
-10:14 < andytoshi> if i have ten utxos on one history, and ten on the other, that are simply split up differently (and i'm not limited to ten, and i'm not limited to having the same number either), neither is any better
-10:14 < andytoshi> and in general detecting this even involves solving subset-sum
-10:14 < andytoshi> err, that's not true, you'll notice when consensus splits
-10:14 < instagibbs> well you can make it arbitrarily better, like say first utxo in a conflicting history in the block
-10:14 < instagibbs> (probably not good idea but still)
-10:14 < andytoshi> i think that creates the ability to retroactively invalidate blocks
-10:15 < instagibbs> invalidates utxo state, right, and no clear way of updating, and now that i think of it, doesnt work
-10:15 < andytoshi> i really think just committing to the utxoset in each block is the solution here, then differing utxo splits are detected by looking at the block headers
-10:15 < iddo> so i still don't see how you get better security than just utxoset in every block and trim old history, is the security just with regard to better anonymity?
-10:15 < andytoshi> iddo: have yiou read the paper?
-10:15 < instagibbs> iddo, we are discussing the paper
-10:16 < iddo> no sorry :(
-10:17 < instagibbs> ok, tiebreaking rule doesnt work because there's no way to compute which utxos "correspond" to others
-10:21 < instagibbs> so the added value here is with utxo commitment on top you are SPV in that you're trusting the miners to not commit to a utxo set in an invalid chain with multiple histories.
-10:21 < instagibbs> each history can not inflate or steal either way
-10:22 < andytoshi> instagibbs: correct
-10:22 < andytoshi> you're trusting the miners not to break consensus
-10:22 < andytoshi> but you are already trusting them not to do that
-10:25 < andytoshi> kanzure: reading the boneh stuff now, thanks
-10:27 < kanzure> kk muchlongread funstuffs.
-10:28 < andytoshi> hah, yes, 20 printed pages
-10:28 < andytoshi> i apparently bought a printer without duplex, because i'm an idiot, and further apparently bought the heaviest paper ever made :(
-10:34 -!- lvns [~lvns@18265b68.cst.lightpath.net] has joined #bitcoin-wizards
-10:35 -!- zooko [~user@2601:281:8000:8387:60e9:2e7:ca6e:7b6a] has quit [Ping timeout: 250 seconds]
-10:43 -!- laurentmt [~Thunderbi@176.158.157.202] has joined #bitcoin-wizards
-10:45 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has joined #bitcoin-wizards
-10:45 -!- lvns [~lvns@18265b68.cst.lightpath.net] has quit [Remote host closed the connection]
-10:46 -!- lvns [~lvns@18265b68.cst.lightpath.net] has joined #bitcoin-wizards
-10:49 < andytoshi> instagibbs: i think the way to think about this is that when you do the IBD, the security is as though every single transaction occured in the tip of the block that you IBD'd up to
-10:55 -!- dpr_ [68c1a9c8@gateway/web/freenode/ip.104.193.169.200] has joined #bitcoin-wizards
-11:33 -!- laurentmt [~Thunderbi@176.158.157.202] has quit [Quit: laurentmt]
-11:34 -!- MoALTz [~no@78-11-183-124.static.ip.netia.com.pl] has joined #bitcoin-wizards
-11:34 -!- NLNico [~NLNico@unaffiliated/nlnico] has joined #bitcoin-wizards
-11:40 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has quit [Ping timeout: 264 seconds]
-11:54 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has quit [Ping timeout: 276 seconds]
-11:56 -!- Mazz_ [~mazznilla@unaffiliated/mazznilla] has joined #bitcoin-wizards
-11:58 -!- lvns [~lvns@18265b68.cst.lightpath.net] has quit [Quit: Leaving...]
-11:59 -!- Davasny [~quassel@195.150.236.122] has joined #bitcoin-wizards
-12:06 -!- lmacken [~lewk@fedora/lmacken] has quit [Ping timeout: 260 seconds]
-12:06 -!- lmacken [~lewk@fedora/lmacken] has joined #bitcoin-wizards
-12:07 -!- jaromil [~jaromil@unaffiliated/jaromil] has quit [Quit: http://www.dyne.org]
-12:08 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-12:14 -!- aalex_ [~aalex@64.187.177.58] has quit [Quit: Connection reset by beer]
-12:17 -!- ennui [~user@unaffiliated/ennui] has joined #bitcoin-wizards
-12:20 -!- NLNico [~NLNico@unaffiliated/nlnico] has quit [Quit: Leaving]
-12:57 -!- lvns [~lvns@18265b68.cst.lightpath.net] has joined #bitcoin-wizards
-12:59 -!- bildramer1 [~bildramer@2001:0:9d38:6ab8:1c54:252a:a1ba:4a97] has joined #bitcoin-wizards
-12:59 -!- bildramer [~bildramer@2001:0:9d38:90d7:28dd:1902:a1ba:4a97] has quit [Disconnected by services]
-12:59 -!- bildramer1 is now known as bildramer
-13:06 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 276 seconds]
-13:09 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-13:15 -!- Davasny_ [~quassel@78-11-193-195.static.ip.netia.com.pl] has joined #bitcoin-wizards
-13:18 -!- Davasny [~quassel@195.150.236.122] has quit [Ping timeout: 252 seconds]
-13:23 -!- Aranjedeath [~Aranjedea@unaffiliated/aranjedeath] has joined #bitcoin-wizards
-13:28 -!- jaromil [~jaromil@unaffiliated/jaromil] has joined #bitcoin-wizards
-13:47 -!- lvns [~lvns@18265b68.cst.lightpath.net] has quit [Remote host closed the connection]
-13:57 -!- r0ach [~r0ach@107-217-214-192.lightspeed.jcvlfl.sbcglobal.net] has quit [Ping timeout: 240 seconds]
-13:57 -!- b-itcoinssg [uid41629@gateway/web/irccloud.com/x-gemfsamilyeyfpuz] has joined #bitcoin-wizards
-14:07 -!- belcher [~user@unaffiliated/belcher] has joined #bitcoin-wizards
-14:09 -!- tromp_ [~tromp@rtc35-082.rentec.com] has joined #bitcoin-wizards
-14:10 -!- BashCo_ [~BashCo@unaffiliated/bashco] has joined #bitcoin-wizards
-14:10 -!- tromp [~tromp@rtc35-220.rentec.com] has quit [Ping timeout: 276 seconds]
-14:11 -!- thepumpernickle1 [~duphass@65.78.54.2] has quit [Ping timeout: 252 seconds]
-14:11 -!- thepumpernickle1 [~duphass@65.78.54.2] has joined #bitcoin-wizards
-14:12 -!- BashCo [~BashCo@unaffiliated/bashco] has quit [Ping timeout: 244 seconds]
-14:17 -!- Davasny_ [~quassel@78-11-193-195.static.ip.netia.com.pl] has quit [Remote host closed the connection]
-14:23 < kanzure> "Short randomizable signatures" http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.699.2251&rep=rep1&type=pdf
-14:24 -!- MoALTz [~no@78-11-183-124.static.ip.netia.com.pl] has quit [Quit: Leaving]
-14:29 -!- tromp_ [~tromp@rtc35-082.rentec.com] has quit [Read error: Connection reset by peer]
-14:30 -!- tromp_ [~tromp@rtc35-082.rentec.com] has joined #bitcoin-wizards
-14:40 -!- byteflame [~byteflame@70-89-65-45-little-rock-ar.hfc.comcastbusiness.net] has quit [Ping timeout: 244 seconds]
-14:49 -!- Burrito [~Burrito@unaffiliated/burrito] has joined #bitcoin-wizards
-14:52 -!- aem [AEM@gateway/shell/elitebnc/x-mbhxtyjmonsqxadw] has quit [Remote host closed the connection]
-14:55 -!- AEM [AEM@gateway/shell/elitebnc/x-sehsutqglzkplweu] has joined #bitcoin-wizards
-15:29 -!- xissburg [~xissburg@unaffiliated/xissburg] has quit [Ping timeout: 250 seconds]
-15:38 -!- GAit [~GAit@2-230-161-158.ip202.fastwebnet.it] has joined #bitcoin-wizards
-15:49 -!- xissburg [~xissburg@unaffiliated/xissburg] has joined #bitcoin-wizards
-15:50 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 244 seconds]
-15:53 -!- murch [~murch@p4FE3A9D5.dip0.t-ipconnect.de] has quit [Quit: Leaving.]
-16:04 -!- GAit [~GAit@2-230-161-158.ip202.fastwebnet.it] has quit [Read error: Connection reset by peer]
-16:04 -!- GAit [~GAit@2-230-161-158.ip202.fastwebnet.it] has joined #bitcoin-wizards
-16:05 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-16:06 < andytoshi> instagibbs: i tried to summarize my comments here in this post: https://www.reddit.com/r/Bitcoin/comments/4vub3y/mimblewimble_noninteractive_coinjoin_and_better/d62cux6
-16:13 -!- NewLiberty [~NewLibert@2602:306:b8e0:8160:95f0:e47a:e341:4811] has quit [Ping timeout: 250 seconds]
-16:20 -!- MaxSan_ [~one@185.103.96.151] has quit [Remote host closed the connection]
-16:22 -!- Giszmo [~leo@ppp-188-174-93-152.dynamic.mnet-online.de] has joined #bitcoin-wizards
-16:24 -!- Giszmo1 [~leo@ppp-188-174-68-43.dynamic.mnet-online.de] has quit [Ping timeout: 244 seconds]
-16:31 -!- ennui [~user@unaffiliated/ennui] has quit [Ping timeout: 244 seconds]
-16:42 -!- b-itcoinssg [uid41629@gateway/web/irccloud.com/x-gemfsamilyeyfpuz] has quit [Quit: Connection closed for inactivity]
-16:42 -!- JackH [~Jack@79-73-188-45.dynamic.dsl.as9105.com] has quit [Ping timeout: 260 seconds]
-16:50 -!- moa [~kiwigb@opentransactions/dev/moa] has joined #bitcoin-wizards
-16:55 -!- jgarzik [~jgarzik@unaffiliated/jgarzik] has quit [Quit: This computer has gone to sleep]
-17:00 -!- ennui [~user@unaffiliated/ennui] has joined #bitcoin-wizards
-17:02 < kanzure> andytoshi: can you do that in the form of short research questions for bored students and newbies that pass by?
-17:05 < andytoshi> kanzure: what do you mean?
-17:06 < kanzure> your summary is good and useful, and having a pile of research questions is also useful
-17:07 < kanzure> jrayhawk: for transaction fees in a low-subsidy environment, yes there are grinding attacks and vulnerabilities. and transaction fee volatility does not help the situation.
-17:07 -!- justanotheruser [~Justan@unaffiliated/justanotheruser] has quit [Read error: Connection reset by peer]
-17:09 < kanzure> fee delay doesn't entirely solve the problem because miners still have an incentive to grind backwards to remine a high-fee transaction
-17:11 -!- r0ach [~r0ach@107-217-214-192.lightspeed.jcvlfl.sbcglobal.net] has joined #bitcoin-wizards
-17:12 -!- justanotheruser [~Justan@unaffiliated/justanotheruser] has joined #bitcoin-wizards
-17:12 < andytoshi> kanzure: hmm, i don't think i can rewrite this as a question because i don't know the right question, my big problem is that i don't know how to think about this really. maybe i just need to let it settle in my head
-17:13 < jrayhawk> Yeah, I can see temporal diffusion of reward being useful; full nodes can track and project reward sizes and split up (or advise SPV clients to split up) large transactions into components broadcast over time as confirmations come in to make all the incentives safer, and miners can pay the reward forward by the same means.
-17:14 < jrayhawk> I'm actually kinda curious if there's any robust way of solving https://www.reddit.com/r/Bitcoin/comments/4vupa6/p2shinfo_shows_movement_out_of_multisig_wallets/d61qyaj though
-17:15 < kanzure> sounds like an "incentive-related transaction delay", e.g. coin throughput is limited based on available hashrate. if there's a bunch of dark hashrate then you could maybe posit that hashrate would light up to try to grab the fee in nearby blocks if it is evenly distributed among the next n blocks but this infringes on reason to bother with transaction prioritization by fee.
-17:16 < kanzure> .. and is already close enough to "light up and grind some blocks to get the last fee" anyway.
-17:16 < kanzure> http://diyhpl.us/wiki/transcripts/scalingbitcoin/security-of-diminishing-block-subsidy/
-17:20 < kanzure> oh that link is not quite the one i thought it was. hrm.
-17:20 < jrayhawk> The BFX thing seems trivially unresolvable to me without an extra identity or trust network; there's an incentive for a person spending fast (faster than the mining reward) to bribe miners to reorg to doublespend, and there's no good way to track individual people to dodge consequences of that (other than, I guess, 50% transaction fees).
-17:21 -!- grubles [~grubles@unaffiliated/grubles] has quit [Quit: leaving]
-17:22 < jrayhawk> And, as pointed out in that thread, there's no coordination cost today because the Chinese de-facto pool has >51%
-17:27 -!- Guyver2 [~Guyver2@guyver2.xs4all.nl] has quit [Remote host closed the connection]
-17:36 -!- Giszmo [~leo@ppp-188-174-93-152.dynamic.mnet-online.de] has quit [Quit: Leaving.]
-17:38 -!- ennui [~user@unaffiliated/ennui] has quit [Ping timeout: 250 seconds]
-17:38 -!- byteflame [~byteflame@50.25.160.41] has joined #bitcoin-wizards
-17:39 -!- AEM is now known as aem
-17:39 -!- ennui [~user@unaffiliated/ennui] has joined #bitcoin-wizards
-17:47 -!- Ylbam_ [uid99779@gateway/web/irccloud.com/x-bhbfzfuzyphnfmfx] has joined #bitcoin-wizards
-17:47 -!- Ylbam [uid99779@gateway/web/irccloud.com/x-zewmibbcbynqswok] has quit [Ping timeout: 258 seconds]
-17:47 -!- Ylbam_ is now known as Ylbam
-17:48 -!- ennui [~user@unaffiliated/ennui] has quit [Ping timeout: 276 seconds]
-17:55 -!- belcher [~user@unaffiliated/belcher] has quit [Quit: Leaving]
-17:55 -!- cyphase [~cyphase@unaffiliated/cyphase] has quit [Ping timeout: 244 seconds]
-18:00 -!- cyphase [~cyphase@unaffiliated/cyphase] has joined #bitcoin-wizards
-18:04 -!- GAit [~GAit@2-230-161-158.ip202.fastwebnet.it] has quit [Quit: Leaving.]
-18:07 < bsm1175321> Just noticed this: http://hackingdistributed.com/2016/02/26/how-to-implement-secure-bitcoin-vaults/
-18:07 < bsm1175321> Sorry, but this seems utterly silly.  If you thought 6 confirmations were too long, now we're going to 24 hours and soon T+3.  This is the way back to the cave.
-18:07 < bsm1175321> Did I miss something with this?
-18:11 < gmaxwell> you missed that it would be used for coins intentionally held in cold storage.
-18:13 < bsm1175321> I could achieve the same thing, and not need to bother everyone else with reversibility, by having a better cold storage key security mechanism, no?
-18:14 -!- cyphase [~cyphase@unaffiliated/cyphase] has quit [Ping timeout: 264 seconds]
-18:14 < bsm1175321> What if I'm a merchant who receives a payment 3 (6-)confirmations down the line from the original thief?  Do I deserve to get screwed over?
-18:16 < TD-Linux> cold storage would normally fund hot storage. otherwise it's not very cold
-18:18 < gmaxwell> bsm1175321: what, ?! you've misunderstood it.
-18:18 < bsm1175321> They could have achieved that by asking BitGo to only cosign the transaction after a 24-hour waiting period, and calling the relevant principals.
-18:18 < gmaxwell> bsm1175321: the merchants couldn't be paid with those coins after they've been released... the merchant wouldn't see a payment until they're released.
-18:19 < gmaxwell> bsm1175321: still requires a TTP who could screw up, e.g. by making it easy to release the funds.
-18:19 -!- cyphase [~cyphase@unaffiliated/cyphase] has joined #bitcoin-wizards
-18:19 < bsm1175321> But isn't that what they have with BitGo?
-18:20 < gmaxwell> "still requires" was referring to your "asking BitGo".
-18:21 < bsm1175321> So seems to me they screwed up their relationship with BitGo, and didn't successfully implement what Emin calls Covenenants/Vaults...
-18:22 < bsm1175321> It seems to me that the (now public) information that certain addresses/utxo's are being used as cold wallets is incredibly useful to an attacker.
-18:25 -!- Ylbam [uid99779@gateway/web/irccloud.com/x-bhbfzfuzyphnfmfx] has quit [Quit: Connection closed for inactivity]
-18:28 -!- thepumpernickle1 [~duphass@65.78.54.2] has quit [Read error: Connection reset by peer]
-18:28 -!- thepumpernickle1 [~duphass@65.78.54.2] has joined #bitcoin-wizards
-18:29 -!- Noldorin [~noldorin@unaffiliated/noldorin] has quit [Quit: My MacBook Pro has gone to sleep. ZZZzzz…]
-18:35 -!- mdavid613 [~Adium@cpe-104-172-191-85.socal.res.rr.com] has quit [Quit: Leaving.]
-18:48 -!- thepumpernickle1 [~duphass@65.78.54.2] has quit [Ping timeout: 240 seconds]
-18:49 -!- dpr_ [68c1a9c8@gateway/web/freenode/ip.104.193.169.200] has quit [Ping timeout: 250 seconds]
-19:06 -!- jtimon [~quassel@55.31.134.37.dynamic.jazztel.es] has quit [Ping timeout: 276 seconds]
-19:15 -!- King_Rex [~King_Rex@unaffiliated/king-rex/x-3258444] has quit [Remote host closed the connection]
-19:16 -!- FNinTak [~jonhbit@tsarviajado.media.mit.edu] has joined #bitcoin-wizards
-19:22 -!- bildramer [~bildramer@2001:0:9d38:6ab8:1c54:252a:a1ba:4a97] has quit [Ping timeout: 250 seconds]
-19:23 -!- bildramer [~bildramer@2001:0:9d38:6ab8:1c54:252a:a1ba:4a97] has joined #bitcoin-wizards
-19:50 -!- Emcy [~MC@unaffiliated/mc1984] has quit [Ping timeout: 244 seconds]
-19:53 -!- JackH [~Jack@79-73-188-45.dynamic.dsl.as9105.com] has joined #bitcoin-wizards
-20:00 -!- NLNico [~NLNico@unaffiliated/nlnico] has joined #bitcoin-wizards
-20:04 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 244 seconds]
-20:06 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has joined #bitcoin-wizards
-20:12 -!- Alopex [~bitcoin@cyber.dealing.ninja] has quit [Remote host closed the connection]
-20:14 -!- Chris_Stewart_5 [~Chris_Ste@unaffiliated/chris-stewart-5/x-3612383] has quit [Ping timeout: 250 seconds]
-20:14 -!- Alopex [~bitcoin@cyber.dealing.ninja] has joined #bitcoin-wizards
-20:37 -!- Tenhi [~tenhi@static-ip-69-64-50-196.inaddr.ip-pool.com] has quit [Ping timeout: 244 seconds]
-20:38 -!- Tenhi [~tenhi@static-ip-69-64-50-196.inaddr.ip-pool.com] has joined #bitcoin-wizards
-20:42 -!- Burrito [~Burrito@unaffiliated/burrito] has quit [Quit: Leaving]
-20:46 -!- jgarzik [~jgarzik@12.176.89.3] has joined #bitcoin-wizards
-20:46 -!- jgarzik [~jgarzik@12.176.89.3] has quit [Changing host]
-20:46 -!- jgarzik [~jgarzik@unaffiliated/jgarzik] has joined #bitcoin-wizards
-21:00 < FNinTak> @kanzure is there a current list of questions for floating students / visitors?
-21:01 < FNinTak> Didn't see one on the core site or ninja site but I could easily be missing it
-21:20 -!- contrapumpkin [~copumpkin@haskell/developer/copumpkin] has joined #bitcoin-wizards
-21:22 -!- copumpkin [~copumpkin@haskell/developer/copumpkin] has quit [Ping timeout: 252 seconds]
-21:23 -!- copumpkin [~copumpkin@haskell/developer/copumpkin] has joined #bitcoin-wizards
-21:25 -!- FNinTak [~jonhbit@tsarviajado.media.mit.edu] has quit [Quit: Leaving]
-21:26 -!- contrapumpkin [~copumpkin@haskell/developer/copumpkin] has quit [Ping timeout: 265 seconds]
-21:26 -!- contrapumpkin [~copumpkin@haskell/developer/copumpkin] has joined #bitcoin-wizards
-21:28 -!- copumpkin [~copumpkin@haskell/developer/copumpkin] has quit [Ping timeout: 244 seconds]
-21:29 -!- copumpkin [~copumpkin@haskell/developer/copumpkin] has joined #bitcoin-wizards
-21:31 -!- contrapumpkin [~copumpkin@haskell/developer/copumpkin] has quit [Ping timeout: 244 seconds]
-21:36 -!- contrapumpkin [~copumpkin@haskell/developer/copumpkin] has joined #bitcoin-wizards
-21:36 -!- copumpkin [~copumpkin@haskell/developer/copumpkin] has quit [Ping timeout: 240 seconds]
-21:42 -!- contrapumpkin [~copumpkin@haskell/developer/copumpkin] has quit [Ping timeout: 240 seconds]
-21:48 -!- oneeman [~oneeman@ip254-177-15-186.ct.co.cr] has quit [Quit: Leaving]
-21:54 < kanzure> FNinTak: not really. would that be helpful to you?
-22:00 -!- byteflame [~byteflame@50.25.160.41] has quit [Ping timeout: 240 seconds]
-22:01 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has joined #bitcoin-wizards
-22:59 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has quit [Ping timeout: 244 seconds]
-23:02 -!- Aranjedeath [~Aranjedea@unaffiliated/aranjedeath] has quit [Quit: Three sheets to the wind]
-23:17 < kanzure> jrayhawk: one idea i have heard tonight is the idea that if you take too much fee in a low-subsidy environment, others will be incentivized to grind on that block until someone chooses a rational amount of transaction fees. and every miner should by default engage in that behavior, to redistribute fee more correctly, even in the presence of high transaction fee volatility. and then other tricks can be used like exponential fee decay ...
-23:18 < kanzure> ... over the next n blocks or something.
-23:19 -!- AusteritySucks [~Austerity@unaffiliated/austeritysucks] has quit [Ping timeout: 258 seconds]
-23:30 -!- NewLiberty [~NewLibert@2602:304:5e77:11e9:d489:df86:9ca9:e316] has joined #bitcoin-wizards
-23:35 -!- NewLiberty_ [~NewLibert@2602:304:5e77:11e9:d489:df86:9ca9:e316] has joined #bitcoin-wizards
-23:35 -!- jgarzik [~jgarzik@unaffiliated/jgarzik] has quit [Read error: Connection reset by peer]
-23:39 -!- NewLiberty [~NewLibert@2602:304:5e77:11e9:d489:df86:9ca9:e316] has quit [Ping timeout: 260 seconds]
-23:49 < amiller> https://arxiv.org/pdf/1605.07524v1.pdf this paper is pretty interesting
-23:49 -!- ThomasV [~ThomasV@unaffiliated/thomasv] has joined #bitcoin-wizards
-23:51 -!- luke-jr [~luke-jr@unaffiliated/luke-jr] has quit [Excess Flood]
-23:51 -!- luke-jr [~luke-jr@unaffiliated/luke-jr] has joined #bitcoin-wizards
-23:52 -!- aburan28 [~androirc@static-108-45-93-70.washdc.fios.verizon.net] has joined #bitcoin-wizards
-23:52 -!- BashCo_ [~BashCo@unaffiliated/bashco] has quit [Remote host closed the connection]
---- Log closed Thu Aug 04 00:00:16 2016
+Source: https://freenode.irclog.whitequark.org/bitcoin-wizards/2016-08-03
+Timezone: UTC
+
+2015-10-30 00:53 sipa changed the topic of #bitcoin-wizards to: This channel is for discussing theoretical ideas with regard to cryptocurrencies, not about short-term Bitcoin development | http://bitcoin.ninja/ | This channel is logged. | For logs and more information, visit http://bitcoin.ninja
+
+03:13 aem is now known as aem
+04:02 maaku_ is now known as maaku
+07:48 <nsh> 'Pass the hash for peace, love and security in the quantum computing age -- Boffins smokin' idea to share parts of keys to cook quantum-proof crypto' - http://www.theregister.co.uk/2016/08/02/protect_signatures_from_quantum_computers_shor_say_cryptoboffins/
+07:49 <nsh> -> 'Unconditionally Secure Signatures' - https://eprint.iacr.org/2016/739.pdf
+07:49 <nsh> MAC generalisation using hash fragments
+11:42 roidster is now known as Guest38856
+13:34 laurentmt1 is now known as laurentmt
+15:30 <amiller> does this mimble wimble thing really work
+15:30 <amiller> i really wish we could talk about these things in terms of zk proofs rather than signatures with related keys
+15:30 <andytoshi> amiller: i think it works. agreed, would be easier to talk about in terms of zk proofs (tho this would require reframing some things)
+15:32 <amiller> can you summarize the scheme with your privacy improvement inlined?
+15:32 <andytoshi> i think so .. one sec
+15:33 <andytoshi> so to start, every utxo has a CT pedersen commitment associated to it, vH + rG, and `r` is the secret blinding factor that only the owner knows (nobody else, no auditors, etc)
+15:34 <andytoshi> if i send you money, i produce a half-transaction that has everything except your outputs in it (so one change and some inputs), and i also give you the (r, v) pair such that (output commit - input commits = vH + rG.
+15:35 <andytoshi> you, the recipient, then add your own outputs so that (output commits - input commits = kG) for some k that you know. split k into k = k1 + k2. then publish a signature with k1G as well as k2
+15:36 <andytoshi> so k1G has a sig which is a zk proof that you know k1, and k2 is a full-knowledge proof that you know k2, and this proves that the excess kG does not have any H component, which in turn proves that the whole transaction adds up
+15:37 <andytoshi> does this make sense so far? can you see a clean way to discribe this whole tx in terms of zk proofs (i do not, it really seems like this interaction is necessary but only the participants can be usre that this interaction happened..)
+15:38 <amiller> hm
+15:38 <andytoshi> i guess, i give *you* a full-knowledge proof that i know the blinding key for (change minus inputs). then you produce a zk proof that you know the blinding key for the entire (outputs - inputs)
+15:39 <andytoshi> "full-knowledge proof" is a term i just made up for my giving you the values .. i can stop using this if you want
+15:39 <amiller> seems ok, i also don't know better notation
+15:39 <amiller> in general there are these sort of multi-prover zk proofs and i have no notation for htem
+15:39 <amiller> like i prove one thing, you adapt that proof plus add more to it to make a related proof but you didn't know the whole witness
+15:40 <andytoshi> yeah
+15:40 <andytoshi> so it's really not publicly verifiable that i did a key handoff here, only the recipient can verify this. what *is* publicly verifiable is that no coins were created or destroyed certainly
+15:40 <amiller> how is this different than CT?
+15:40 <andytoshi> but there's also something stronger being shown, if i keep my own blinding factors secret then everyone knows there's no theft
+15:40 <amiller> i guess going in i thought this was going to be comparable to ringCT
+15:40 <andytoshi> no, ringCT is actually orthogonal (though technically i have zero idea how to combine these)
+15:41 <andytoshi> CT just uses the blinding factors as blinding factors. this scheme uses the blinding factors for authentication. that's the moral difference
+15:41 <andytoshi> (it then uses this fact to get OWAS and massive pruning while still allowing full verification)
+15:41 <amiller> how does it give any better pruning than CT
+15:42 <andytoshi> CT doesn't give any pruning at all, you've gotta keep every output and every rangeproof around if you want to be able to reverify the chain
+15:42 <kanzure> andytoshi: you should still look at http://diyhpl.us/wiki/transcripts/2016-july-bitcoin-developers-miners-meeting/dan-boneh/
+15:42 <andytoshi> this literally lets you delete every spent output
+15:42 <andytoshi> thanks kanzure, it's open, i will
+15:43 <amiller> "reverify the chain" ok
+15:43 <andytoshi> amiller: ...and if you give the chain to somebody, without any spent outputs or any input refs even, they can still verify that along the entire history no theft or inflation happened
+15:43 <andytoshi> (assuming everyone kept their keys secret, "theft" means something technical here..)
+15:44 <amiller> this seems like an interesting and relevant security goal but i don't understand it clearly yet, we can talk about it independently of the scheme though
+15:44 <amiller> so like, a new node that wants to start mining and verify the whole chain
+15:44 <amiller> without just relying on SPV security
+15:44 <andytoshi> yeah, i'd like to talk about this. i'm trying to understand the security model here.
+15:44 <andytoshi> right
+15:44 <amiller> it's safe to ignore some information that was originally included?
+15:44 <andytoshi> yes. what this new node cares about is knowing the current chainstate (utxo set)
+15:45 <andytoshi> suppose the node *does not* care how this utxoset came to be, only that somehow the coins were always passed along honestly
+15:45 <amiller> and i can verify that this utxo set doesn't reflect any invalid transitions like a block that ignores some previous transactions
+15:45 <andytoshi> exactly
+15:46 <andytoshi> there exists a path of handoffs (where "handoff" is something we'd have to describe more precisely, but it's done by one of the transactions i described above) from coinbase inputs to the current utxos
+15:47 <instagibbs> If you don't validate all of the blocks' contents, it's possible there is an entirely different utxo set that also seems valid. Peers can tell you about these alternative sets of utxo though.
+15:48 <andytoshi> instagibbs: what do you mean?
+15:48 <instagibbs> (thought we discussed this already but I'll rexplain)
+15:48 <andytoshi> if you mean peers can give you different merkle paths for the same utxos, that doesn't give a different utxoset
+15:48 <andytoshi> that just attaches the utxoset to the blockchain in a different way
+15:48 <instagibbs> or different utxos
+15:49 <andytoshi> kk pls explain
+15:49 <instagibbs> like, imagine complete disjoint post-genesis histories
+15:49 <amiller> i feel like there's something implicit missing, like we're implicitly assuming SPV already or osmething
+15:49 <amiller> like i think there's something lurking here that makes the efficiency claim vs CT not actually present
+15:49 <andytoshi> instagibbs: this scheme does not allow that, all the coinbase inputs are explicit
+15:49 <andytoshi> amiller: this has completely different goals than CT
+15:49 <andytoshi> CT was just about hiding amounts, this is about collapsing history
+15:50 <instagibbs> andytoshi, sorry can you explain why that would stop that
+15:50 <amiller> what is collapsing history? so far everything you described sounds like CT
+15:50 <instagibbs> merkle trees don't prove anything about not having two different spends of the same outputs
+15:50 <andytoshi> instagibbs: the blockchain defines a single set of inputs. the inputs are part of the history. therefore you cannot have disjoint histories
+15:50 <amiller> the outputs are represented as commitments, the sender/receiver together make a transaction or pair of half-transactions that spend some old outputs and create so new outputs
+15:50 <andytoshi> instagibbs: no, but the algebra prevents that (unless the "same output" appeared twice)
+15:51 <andytoshi> amiller: yes, i haven't gotten to the collapsing history yet
+15:51 <andytoshi> but nor have i made any claims of space savings yet
+15:51 <instagibbs> genesis block makes 1 blinded output, following block has 2 transactions(ignore the fact that we can decduce double-spending from pure numbers here))
+15:51 <andytoshi> i'm just trying to reframe this specific part in a way that you like, because it's critical to everything else
+15:51 <amiller> ok, i think i understand the signature scheme well enough
+15:52 <instagibbs> one transaction has 2 outputs, the other has 1, let's say. So they're unique in blinding factors and so on.
+15:52 <andytoshi> amiller: kk, so the next part is OWAS, which is pretty straightforward, you can just put transactions inputs and outputs together, then the sum of all outputs minus all inputs will be the sum of all these excess k*G values
+15:52 <instagibbs> So I reveal one history to you, and hide the other. The math will work out.
+15:52 <andytoshi> amiller: so you keep both k1G + sig, and you add the explcit k2s, and this is OWAS
+15:53 <instagibbs> I have no idea what this means for the security model in reality
+15:53 <andytoshi> instagibbs: lemme think about this, this seems very serious
+15:54 <instagibbs> I mean it's the same problem we have in Bitcoin... but with our scheme we get strong guarantees knowing that it is at least *a* valid non-inflationary history
+15:54 <instagibbs> our meaning wimble
+15:55 <andytoshi> yeah, sure, but we may have consensus disagreement between peers
+15:55 <instagibbs> but peers may be on different histories, on same chain header. Peers can tell each other. I'm not sure how to converge
+15:55 <andytoshi> (which might be recoverable, maybe inputs need to have explicit merkle paths and this does it)
+15:55 <andytoshi> no, that's not sufficient..
+15:55 <instagibbs> yeah I thought about that too, then discounted it, but can't immediately recall
+15:56 <kanzure> andytoshi: re: OWAS things, the dan boneh transcript covers this in some gorey detail, but also it was covered near the bottom of https://bitcoincore.org/logs/2016-05-zurich-meeting-notes.html
+15:56 <kanzure> starting near the section called "Schnorr stuff and signature aggregation" (or just search for "OWAS")
+15:58 <instagibbs> so you'd need to figure out where the first violation of the "only one spend of one output" rule is broken, invalidate back to that block, and sync from there, or something.
+15:58 <andytoshi> instagibbs: you don't need to multispend any outputs to do this tho
+15:58 <instagibbs> oh hm?
+15:58 <andytoshi> instagibbs: you create three outputs with commitments C1, C2, C1 + C2. when IBDing you reveal C1 and C2 to some peers, C1 + C2 to others
+15:59 <instagibbs> err right
+15:59 <andytoshi> now you've IBD'd peers in a way that they disagree on the utxo set-
+15:59 <instagibbs> well there are inputs being spent twice, in general
+15:59 <instagibbs> but yes we care about new outputs matching up
+15:59 <andytoshi> peers who were online at the time would detect this, but that's tendermint security model
+15:59 <andytoshi> instagibbs: what do you mean by inputs being spent twice in general?
+16:00 <instagibbs> I agree with what you're saying, it's not impt
+16:00 <instagibbs> Nodes would have to reject a chain once they discover the utxo set conflicts with another one
+16:00 <andytoshi> instagibbs: ok, maybe the outputs need to be in a merkle sum tree
+16:00 <andytoshi> so you can't do this C1, C2, C1 + C2 trick
+16:02 <instagibbs> Well, there is already DoS vector of simply being fed bad utxo set
+16:02 <andytoshi> yes that's fine, there are ways around that (basically asking peers for a quorum on what the utxos in each block actually ought to be)
+16:02 <instagibbs> At least with this attack it would require miners making "legitimate" parallel histories
+16:03 <instagibbs> which can/will invalidate huge swaths of blocks if caught
+16:03 <andytoshi> yes, that's worse, because then it's not detectable
+16:03 <andytoshi> but using a merkle sum tree prevents it i thin
+16:05 <andytoshi> oh, no, you can fool a merkle sum tree by putting negative outputs in. you just never reveal these to anyone
+16:05 <instagibbs> I was hoping peer gossip would be just as effective as spreading the header chain, but now not sure at all
+16:06 <andytoshi> in practice it might be
+16:06 <andytoshi> but this is a weird security model
+16:07 <andytoshi> you can amplify from peer gossip to SPV by having miners commit to the current utxoset in every block
+16:08 <andytoshi> so you have full security in knowing that no invalid transactions have occured, but only SPV security that your history is the one that everyone else is using
+16:08 <andytoshi> (which actually, might be exactly what you want, the blockheaders define the "history that everyone else is using" anyway..)
+16:09 <instagibbs> Hmm, yes I was hoping the gossip would be more holistic, but I think it's looking more fraud-proofy considering peers wouldn't even care about bad branches
+16:12 <andytoshi> i don't like gossip or fraud proofs, both of these can be censored from a peer who is surrounded during IBD (and maybe the peer doesn't know to ask for it later so the effect is permanent)
+16:12 <instagibbs> Yes
+16:13 <instagibbs> So it sort of reminds me of a rolling utxo commitment
+16:13 <instagibbs> but you must assume miners all start from beginning
+16:13 <kanzure> without gossip how are you doing initial block download?
+16:14 <instagibbs> kanzure, that's what I mean, the gossip isn't as useful as it is for finding the best chain
+16:15 <instagibbs> but the gossip for wimble will never prove to the user they are on the right chain
+16:15 <kanzure> is this concern about lack of diff and lack of knowing where the problem is in the data set?
+16:15 <instagibbs> s/right/valid/
+16:16 <andytoshi> kanzure: no the problem is that there can be multiple valid histories associated to the same blockheader chain
+16:16 <instagibbs> It's the lack of knowing if you're on a valid chain/utxo set.
+16:17 <andytoshi> so you can make a "randomized merkle-sum tree" which avoids this problem i think
+16:17 <andytoshi> each internal node commits to the sum H(L)L + H(R)R where L, R are its two child nodes
+16:18 <andytoshi> now if you have C1, C2, C1 + C2 in the same merkle tree there is no way to come up with extra branches that will hide this fact
+16:19 <andytoshi> ..has anyone heard of this construction before? i just made it up..
+16:20 <iddo> if you have utxoset in every block then you can "collapse" the history by trimming everything except the last k blocks (say k=1000), are you guys suggesting a way to collapse the history that gives better security guarantees than this simple approach?
+16:20 <kanzure> iddo: http://diyhpl.us/~bryan/papers2/bitcoin/mimblewimble.txt
+16:20 <andytoshi> iddo: yes, certainly, in that case you can literally make up the entire history before the last k blocks
+16:21 <andytoshi> or make up no history, just say "the chainstate was this back then, trust me"
+16:22 <iddo> what's the security guarantees that you want to have?
+16:22 <instagibbs> andytoshi, the attacker could put C1, C2 in block 2, and C1+C2 in block 3?
+16:22 <instagibbs> Originally I described the attack as odd/even blocks, to make it clear they could be anywhere
+16:23 <instagibbs> iddo, we would like full node security without downloading the entire chain :)
+16:26 <andytoshi> instagibbs: well you can always make the root of the tree have as children the "real" root as well as the previous block's root, so they are all connected
+16:28 <andytoshi> but i'm unsure now what this randomized merkle sum tree actually gets you though, i'm confused again
+16:29 * andytoshi goes for a run
+16:29 <instagibbs> yeah good idea, cheers
+16:29 <iddo> with the simple approach you'd get say k=1000 PoW confirmations that the utxoset is in consensus, you claim that you can verify the history from genesis after trimming the history?
+16:30 <andytoshi> iddo: yes, kanzure posted a link
+16:30 <iddo> btw you can do probabilistic proof that the utxoset is verified from genesis, but it isn't practical
+16:31 <kanzure> instagibbs: for full node security without downloading and verifying the entire chain, you should probably work backwards from full security and then figure out what you can add to that scenario, until you work backwards to something that roughly approximates the set of features you prefer a full node to have.
+16:32 <kanzure> and ideally without saying "turn the entire system into a giant zk-snark and just query a bunch of small proofs and let the proofs battle each other for supremacy"
+16:40 <gmaxwell> Most bitcoin technically sophicated hacker we've seen yet? https://www.reddit.com/r/Bitcoin/comments/4vykkr/1000_btc_giveaway_from_your_friend_rekcahxfb/
+16:41 <Tiraspoll> gmaxwell https://bitcointalk.org/index.php?topic=327178.msg3521657#msg3521657
+16:41 <Tiraspoll> the coins are from here
+16:41 <Tiraspoll> not related to finex
+16:41 <Tiraspoll> 2013 address
+16:42 zooko` is now known as zooko
+16:42 <gmaxwell> cool.
+17:03 <andytoshi> instagibbs: ok, so forget all that merkle sum stuff. the only thing an attacker can do with your attack is split consensus; he can't steal coins or inflate or anything (he can only split his own coins, since he'd have to rangeproof the split). so add a commit to the utxoset in each block, now such a consensus split is trivially detectable (and the longest-chain rule can take care of it)
+17:04 <andytoshi> so you have full security knowing the utxoset up to how the coins are split up (and their age), which means knowing the utxoset up to ownership, and SPV security of the exact split (i.e. whether you are on the consensus history)
+17:04 <andytoshi> but you already only have SPV security that you're on the consensus history, that's more or less what SPV security means
+17:08 <gmaxwell> it is a little obnoxious that a summary-verifier could end up on a history that had temporary theft but which was made whole at the end, while a full verifier would reject that history.
+17:08 <gmaxwell> you could say that the full verifier should reorg to accept it too, since the end result is the same-- but that only makes sense if the only enforced rules are the rules enforcable by summary verification.
+17:12 <andytoshi> gmaxwell: well remember that the blockheaders untimately do commit to everything
+17:12 <iddo> not clear if you're trimming data forever, or just having a method to provide SPV proofs, if you trim forever then you're not protected against reversal of history of length greater than where you trimmed?
+17:12 <andytoshi> so if there really are alternate histories like this they will have alternate blockchains
+17:12 <instagibbs> I'm thinking along the lines of allowing multiple histories, even invalid transactions. If you had a conflicting utxo tie-breaking rule, nodes could converge by just sharing what they know, much like sharing block headers today..
+17:12 <andytoshi> iddo: correct, you're basically screwed if you reorg past where you trimmed (you'll have to find the data somewhere)
+17:12 <andytoshi> iddo: but the security here is much stronger than SPV
+17:13 <instagibbs> given a proper utxo set you know there's no inflation, and you can be told about better histories by a single honest peer.
+17:13 <andytoshi> instagibbs: that seems very hard to do, which history is "better"?
+17:13 <instagibbs> yes, that's the nut to crack
+17:14 <andytoshi> if i have ten utxos on one history, and ten on the other, that are simply split up differently (and i'm not limited to ten, and i'm not limited to having the same number either), neither is any better
+17:14 <andytoshi> and in general detecting this even involves solving subset-sum
+17:14 <andytoshi> err, that's not true, you'll notice when consensus splits
+17:14 <instagibbs> well you can make it arbitrarily better, like say first utxo in a conflicting history in the block
+17:14 <instagibbs> (probably not good idea but still)
+17:14 <andytoshi> i think that creates the ability to retroactively invalidate blocks
+17:15 <instagibbs> invalidates utxo state, right, and no clear way of updating, and now that i think of it, doesnt work
+17:15 <andytoshi> i really think just committing to the utxoset in each block is the solution here, then differing utxo splits are detected by looking at the block headers
+17:15 <iddo> so i still don't see how you get better security than just utxoset in every block and trim old history, is the security just with regard to better anonymity?
+17:15 <andytoshi> iddo: have yiou read the paper?
+17:15 <instagibbs> iddo, we are discussing the paper
+17:16 <iddo> no sorry :(
+17:17 <instagibbs> ok, tiebreaking rule doesnt work because there's no way to compute which utxos "correspond" to others
+17:21 <instagibbs> so the added value here is with utxo commitment on top you are SPV in that you're trusting the miners to not commit to a utxo set in an invalid chain with multiple histories.
+17:21 <instagibbs> each history can not inflate or steal either way
+17:22 <andytoshi> instagibbs: correct
+17:22 <andytoshi> you're trusting the miners not to break consensus
+17:22 <andytoshi> but you are already trusting them not to do that
+17:25 <andytoshi> kanzure: reading the boneh stuff now, thanks
+17:27 <kanzure> kk muchlongread funstuffs.
+17:28 <andytoshi> hah, yes, 20 printed pages
+17:28 <andytoshi> i apparently bought a printer without duplex, because i'm an idiot, and further apparently bought the heaviest paper ever made :(
+17:49 <andytoshi> instagibbs: i think the way to think about this is that when you do the IBD, the security is as though every single transaction occured in the tip of the block that you IBD'd up to
+19:59 bildramer1 is now known as bildramer
+21:23 <kanzure> "Short randomizable signatures" http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.699.2251&rep=rep1&type=pdf
+23:06 <andytoshi> instagibbs: i tried to summarize my comments here in this post: https://www.reddit.com/r/Bitcoin/comments/4vub3y/mimblewimble_noninteractive_coinjoin_and_better/d62cux6
