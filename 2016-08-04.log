@@ -1,0 +1,102 @@
+Source: https://freenode.irclog.whitequark.org/bitcoin-wizards/2016-08-04
+Timezone: UTC
+
+2015-10-30 00:53 sipa changed the topic of #bitcoin-wizards to: This channel is for discussing theoretical ideas with regard to cryptocurrencies, not about short-term Bitcoin development | http://bitcoin.ninja/ | This channel is logged. | For logs and more information, visit http://bitcoin.ninja
+
+00:02 <kanzure> andytoshi: can you do that in the form of short research questions for bored students and newbies that pass by?
+00:05 <andytoshi> kanzure: what do you mean?
+00:06 <kanzure> your summary is good and useful, and having a pile of research questions is also useful
+00:07 <kanzure> jrayhawk: for transaction fees in a low-subsidy environment, yes there are grinding attacks and vulnerabilities. and transaction fee volatility does not help the situation.
+00:09 <kanzure> fee delay doesn't entirely solve the problem because miners still have an incentive to grind backwards to remine a high-fee transaction
+00:12 <andytoshi> kanzure: hmm, i don't think i can rewrite this as a question because i don't know the right question, my big problem is that i don't know how to think about this really. maybe i just need to let it settle in my head
+00:13 <jrayhawk> Yeah, I can see temporal diffusion of reward being useful; full nodes can track and project reward sizes and split up (or advise SPV clients to split up) large transactions into components broadcast over time as confirmations come in to make all the incentives safer, and miners can pay the reward forward by the same means.
+00:14 <jrayhawk> I'm actually kinda curious if there's any robust way of solving https://www.reddit.com/r/Bitcoin/comments/4vupa6/p2shinfo_shows_movement_out_of_multisig_wallets/d61qyaj though
+00:15 <kanzure> sounds like an "incentive-related transaction delay", e.g. coin throughput is limited based on available hashrate. if there's a bunch of dark hashrate then you could maybe posit that hashrate would light up to try to grab the fee in nearby blocks if it is evenly distributed among the next n blocks but this infringes on reason to bother with transaction prioritization by fee.
+00:16 <kanzure> .. and is already close enough to "light up and grind some blocks to get the last fee" anyway.
+00:16 <kanzure> http://diyhpl.us/wiki/transcripts/scalingbitcoin/security-of-diminishing-block-subsidy/
+00:20 <kanzure> oh that link is not quite the one i thought it was. hrm.
+00:20 <jrayhawk> The BFX thing seems trivially unresolvable to me without an extra identity or trust network; there's an incentive for a person spending fast (faster than the mining reward) to bribe miners to reorg to doublespend, and there's no good way to track individual people to dodge consequences of that (other than, I guess, 50% transaction fees).
+00:22 <jrayhawk> And, as pointed out in that thread, there's no coordination cost today because the Chinese de-facto pool has >51%
+00:39 aem is now known as aem
+00:47 Ylbam_ is now known as Ylbam
+01:07 <bsm1175321> Just noticed this: http://hackingdistributed.com/2016/02/26/how-to-implement-secure-bitcoin-vaults/
+01:07 <bsm1175321> Sorry, but this seems utterly silly. If you thought 6 confirmations were too long, now we're going to 24 hours and soon T+3. This is the way back to the cave.
+01:07 <bsm1175321> Did I miss something with this?
+01:11 <gmaxwell> you missed that it would be used for coins intentionally held in cold storage.
+01:13 <bsm1175321> I could achieve the same thing, and not need to bother everyone else with reversibility, by having a better cold storage key security mechanism, no?
+01:14 <bsm1175321> What if I'm a merchant who receives a payment 3 (6-)confirmations down the line from the original thief? Do I deserve to get screwed over?
+01:16 <TD-Linux> cold storage would normally fund hot storage. otherwise it's not very cold
+01:18 <gmaxwell> bsm1175321: what, ?! you've misunderstood it.
+01:18 <bsm1175321> They could have achieved that by asking BitGo to only cosign the transaction after a 24-hour waiting period, and calling the relevant principals.
+01:18 <gmaxwell> bsm1175321: the merchants couldn't be paid with those coins after they've been released... the merchant wouldn't see a payment until they're released.
+01:19 <gmaxwell> bsm1175321: still requires a TTP who could screw up, e.g. by making it easy to release the funds.
+01:19 <bsm1175321> But isn't that what they have with BitGo?
+01:20 <gmaxwell> "still requires" was referring to your "asking BitGo".
+01:21 <bsm1175321> So seems to me they screwed up their relationship with BitGo, and didn't successfully implement what Emin calls Covenenants/Vaults...
+01:22 <bsm1175321> It seems to me that the (now public) information that certain addresses/utxo's are being used as cold wallets is incredibly useful to an attacker.
+04:00 <FNinTak> @kanzure is there a current list of questions for floating students / visitors?
+04:01 <FNinTak> Didn't see one on the core site or ninja site but I could easily be missing it
+04:54 <kanzure> FNinTak: not really. would that be helpful to you?
+06:17 <kanzure> jrayhawk: one idea i have heard tonight is the idea that if you take too much fee in a low-subsidy environment, others will be incentivized to grind on that block until someone chooses a rational amount of transaction fees. and every miner should by default engage in that behavior, to redistribute fee more correctly, even in the presence of high transaction fee volatility. and then other tricks can be used like exponential fee decay ...
+06:18 <kanzure> ... over the next n blocks or something.
+06:49 <amiller> https://arxiv.org/pdf/1605.07524v1.pdf this paper is pretty interesting
+08:40 <katu_> amiller: not really
+08:40 <katu_> hijacking 800 prefixes is *incredibly* load
+08:40 <katu_> *loud
+13:34 laurentmt1 is now known as laurentmt
+13:55 <Taek> "The typical example is that say I have a program that needs to divide two numbers, division is a complex operation but instead I can provide an extra input where I say this is the result of the division and it does multiplication to verify."
+13:56 <Taek> That's a potentially fun way to think about lite-clients. You give them the on-chain data, and then you give them *extra* data, and using that extra data they are able to substantially reduce their computational overhead
+14:22 <Taek> "Iused to work on quantum ish stuff. They argued that quantum computing would never exist, because the cost of computing would scale exponentially with the number of bits. (laughter) I think we're running out of time, but I did want to bring up the issue of quantum computing and the future of bitcoin. There are some criticism about the lack of preparation regarding what bitcoin has been doing regarding post-quantum. There should be a quantum
+14:22 <Taek> resistant system." -> has the state of the art of quantum computing evolved? I thought practical quantum computing was still not on the visible horizon
+14:29 <c0rw1n> it still very much was not last time i looked ( 1 or 2 years ago )
+14:34 <Taek> The boneh transcript is super interesting. kanzure has said it about 40 times at this point, but y'all should definitely read it: http://diyhpl.us/wiki/transcripts/2016-july-bitcoin-developers-miners-meeting/dan-boneh/
+14:34 <katu_> Taek: yes
+14:35 <katu_> all about superposition on SQUIDs now
+14:44 <bsm117532> Entropy is a bitch, and will remain so. The D-Wave device is not a quantum computer, but rather a massively parallel simulated annealing machine. It's important to figure out which problems can be mapped onto the D-Wave model.
+14:45 <Taek> from what I remember, none of the problems important to cryptography can be mapped onto the D-Wave model.
+14:52 <Taek> andytoshi: seems to me like payment channels would be inviable with mimblewimble (henceforce MW). Given that payment channels provide excellect opportunity for both scaling and privacy (insert massive amounts of engineering here), does that mean that MW is not an improvement unless we can somehow recover that upgrade?
+14:58 <katu_> bsm117532: its more like that you can't run an algorithm in such a noisy environment, i'd not call it simulated annealing though, if google acked that it's for reals.
+14:58 <katu_> batch processing can be still useful, just not to run shor yet.
+15:07 <instagibbs> Taek, it's not compatible with scripting in general, unfortunately. I think in practice you'd have a two-tier system. One with CT, one CT-OWAS
+16:51 <Taek> another thing that worries me about OWAS is the flood-network nature of transaction propagation.
+16:51 <Taek> If I'm a forensic company that specializes in de-anonymizing Bitcoin transactions, it's not that much work for me to spin up a ton of nodes and try to get a broad view of the flood network
+16:52 <instagibbs> I'm guessing we'd probably replace the p2p network anyways :P
+16:53 <Taek> is there a lot of work being done in that direction?
+16:53 <instagibbs> the p2p stuff is being refactored, if that's what you mean
+16:53 <Taek> from a theoretical standpoint, the flood network is one of my least favorite parts of Bitcoin. I don't think I'm alone in this, but I also don't recall seeing a lot of research being done exploring alternatives
+17:16 bildramer1 is now known as bildramer
+17:28 <fkinglag> WTB GRC or BTC with $9 amazon payment money (not giftcard)
+17:54 <kanzure> taek: OWAS can work on p2p flood network
+18:00 <Taek> kanzure: the problem is that an adversary who is watching transactions flow around and be merged is going to be able to separate them. Someone looking at the blockchain after-the-fact will not be able to, but unless I'm missing something an attack will still be able to ~know which inputs and outputs are associated with which parties
+18:00 <Taek> I guess you could release the transactions through a mixnet of some sort
+20:18 <laurentmt> Hi there ! Just a question about MimbleWimble : the article cites 4 or 5 millions utxos in the blockchain but we currently have around 40 millions utxos. Is it a typo or do I miss a technical subtility (it's likely) ?
+20:19 <bsm117532> My quick mental calculation came up with 40M as well.
+20:20 <laurentmt> Well, if it's a typo, I fear the scalability improvement doesn't hold since we would have to compare 80GB to 135GB
+20:21 <laurentmt> anyway, it doesn't remove anything to the cleverness of the idea
+20:21 <laurentmt> :)
+20:21 <bsm117532> "txouts": 40694684,
+20:21 <laurentmt> yep. Got the same numbers
+20:22 <bsm117532> straight from the horse's mouth.
+20:22 <bsm117532> Where the horse is bitcoind.
+20:22 <laurentmt> and if I correct, estimations done by the author at the end of the paper correspond to 5millions utxos
+20:22 <laurentmt> (15GB for 5M utxos and 15GB for 150M txs)
+20:25 <laurentmt> s/I correct/I'm correct
+20:28 <gmaxwell> scalablity is usually more about the asymtopics, not the constant factors...
+20:29 <gmaxwell> e.g. advance the clock forward n years. history keeps growing, the utxo set should taper.
+21:05 <JackH> anyone seen ByzCoin and has any comment to it?
+21:36 <bsm117532> reading the blog post now...http://hackingdistributed.com/2016/08/04/byzcoin/
+21:38 <midnightmagic> heading towards 90G for a full node install plus a reasonable-sized wallet.
+21:39 <bsm117532> JackH: PBFT generally scales very badly as the number of nodes increases.
+21:41 <bsm117532> PBFT has to poll all nodes and have a quorum respond, so the communication scales like N^2 in terms of N nodes.
+21:42 <bsm117532> Also, they generally have a leader, which in my opinion is a bad idea because an attacker can just attack the leader...
+21:42 <bsm117532> amiller may have fixed both these criticisms with honey badger though https://eprint.iacr.org/2016/199
+21:44 <JackH> i will read this
+21:45 <bsm117532> Bitcoin by contrast has an ex-post-facto leader, in that you don't know who is going to produce the next block, but the role of creating a block is akin to a "leader" in PBFT.
+21:46 <bsm117532> This leaderless decentralization of attack surface is very important to Bitcoin's security, IMHO, and I want Bitcoin to keep it's ex post facto nature, in general.
+21:47 <bsm117532> I would love to see an altcoin that was Honey Badger + posting of PoW hashes, if Honey Badger does indeed solve these problems.
+21:49 <bsm117532> From ByzCoin: "Overall, tree-based collective signing reduces communication complexity from quadratic to logarithmic"
+21:51 <instagibbs> andytoshi, im now fairly convinced that utxo commitment solves stuff, *if* full nodes allow alternative histories to exist, or even bad ones, as long as they one they commit to is a valid history
+21:52 <instagibbs> the one sticky point is historical inflation, as online nodes will reject these, but new ones wont
+21:54 <instagibbs> s/historical inflation/previous illegal inflation that got negated out later/
+21:55 <bsm117532> JackH: "Handle (hopefully rare) PBFT deadlock events" -- one way to take down a PBFT is to throw it into its "leader election" phase, which has even worse complexity than the standard case, and progress cannot be made (tx not posted) without a leader.
+21:56 <bsm117532> I also worry a lot that if there is any advantage to being the leader (like extracting tx fees or block rewards, or transaction selection/censorship) it will be gamed.
