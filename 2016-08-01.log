@@ -1,0 +1,177 @@
+2015-10-30 00:53 sipa changed the topic of #bitcoin-wizards to: This channel is for discussing theoretical ideas with regard to cryptocurrencies, not about short-term Bitcoin development | http://bitcoin.ninja/ | This channel is logged. | For logs and more information, visit http://bitcoin.ninja
+02:15 <kanzure> dan boneh things https://twitter.com/kanzure/status/760297796411002880
+04:35 <majorplayer> hi, i have an idea for improving privacy in bitcoin. my friend who knows technology says this channel would have interest http://5pdcbgndmprm4wud.onion/mimblewimble.txt
+04:42 Guest10 is now known as browserfied
+04:47 browserfied is now known as noob33
+04:48 noob33 is now known as fedexit
+05:22 LeMiner is now known as LeMiner2
+05:55 <kanzure> anyone have that file?
+05:55 <kanzure> 80
+07:09 <midnightmagic> kanzure: yes.
+07:23 <kanzure> some other interesting thing from dan:
+07:23 <kanzure> https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/michalevsky
+07:23 <kanzure> "We show that the MEMS gyroscopes found on modern smart phones are sufficiently sensitive to measure acoustic signals in the vicinity of the phone. The resulting signals contain only very low-frequency information (<200Hz). Nevertheless we show, using signal processing and machine learning, that this information is sufficient to identify speaker information and even parse speech. Since iOS and Android require no special permissions to ...
+07:23 <kanzure> ... access the gyro, our results show that apps and active web content that cannot access the microphone can nevertheless eavesdrop on speech in the vicinity of the phone."
+07:24 <fluffypony> clever
+07:29 <nsh> if you had access to 20 gyros in one room, you could achieve roughly linear increase in resolution
+07:30 <nsh> nontrivial dsp problem though
+07:30 <nsh> (not a nontrivial dsp problem that is unstudied in signals intelligence community)
+08:44 <nsh> who will explain this 'Non-interactive three-way diffie hellman.' to me
+09:45 <Alanius> nsh: you mean the Joux protocol?
+09:46 <nsh> it's something pairing based that Boneh alluded to in the recent dev meeting
+09:46 <nsh> ( http://diyhpl.us/wiki/transcripts/2016-july-bitcoin-developers-miners-meeting/dan-boneh/ )
+09:47 <Alanius> so: Alice, Bob and Charlie all publish their contributions: g^a, g^b, g^c and keep a, b, c secret
+09:47 * nsh nods
+09:47 <Alanius> Alice is able to compute the pairing of Bob and Charlie's contributions: e(g^b, g^c) = e(g,g)^(bc)
+09:47 <Alanius> and she then raises that to her own secret value a
+09:48 <Alanius> essentially the same process happens for Bob and Charlie
+09:48 <nsh> oh, interesting
+09:48 <nsh> why won't it scale beyond three?
+09:48 <nsh> oh right, need more rounds
+09:49 <nsh> if you higher order pairings you could do more parties. hmmm
+09:49 <Alanius> well, maybe there exists a trilinear map (tripling?) e that can take g^b, g^c, g^d to e(g,g,g)^(bcd)
+09:49 * nsh nods
+09:50 <nsh> that's what i should have said, higher order linear maps
+09:50 <Alanius> finding such a map would make you famous :)
+09:50 <nsh> heh heh :)
+09:50 <nsh> my main problem in life is beyond too (in)famous :)
+09:51 <Alanius> I think fhe actually implies multilinear maps, but the problem there is efficiency (or lack thereof)
+09:52 <nsh> right
+09:55 <nsh> it might be possibl--- no, that's a terrible idea. hmmm, maybe it's not
+09:57 <nsh> (it might be possible to hedge up DHKE products while incidentally transacting then use an accumulator structure to launder them periodically. giving folk access to precached shared secrets if they need them for a channel)
+09:57 <nsh> i guess that already happens in elements alpha
+09:58 <nsh> sans the laundering
+10:00 <Alanius> wait, what?
+10:03 <nsh> so with confidential transactions you do non-interactive DHKE with each transaction, and this can be used to reclaim space in the range proof for a secure cryptographic messaging channel. this means anyone that's transacted has created a potentially-reusable symmetric cryptographic session
+10:04 <nsh> which is kinda handy i guess. trying to think of other ways that might happen if we moved to something like BLS sigs
+10:05 <nsh> and more speculatively whether you could aggregate the key exchange across a chain of transactions
+11:57 [Derek] is now known as Guest73674
+13:08 contrapumpkin is now known as copumpkin
+14:11 <andytoshi> kanzure: i downloaded that onion link and rehosted it at https://download.wpsoftware.net/bitcoin/wizardry/mimblewimble.txt in case you want to rehost as well. idk if it's correct but it sounds legit. the first bit of it (the OWAS stuff) i had actually come up with a slightly more space-wasting version on my own not too long ago, so this isn't a total crank at least
+14:11 <andytoshi> is this channel mirrored on slack somewhere?
+14:12 <pigeons> yeah i think i saw a read only room on slack the one time i went to the "bitcoin core" slack
+14:12 <pigeons> linked to this room
+14:12 <andytoshi> kk. i posted that and immediately a slack link-expander hit my server. (i don't mind obvs for a public room, but it startled me)
+14:13 <andytoshi> the claim of this paper is that he can structure transactions (a) with full OWAS, basically every block is a coinjoin of all its transactions, and (b) such that you can do full validation of the chain without needing all the historic data, basically just the utxoset and a (relatively) small bit of each block
+14:14 <andytoshi> with just discrete logs
+14:15 <andytoshi> i already have a slight improvement i think ... when i was looking into this on my own, i found i could do payment channels .. this jedusor guy seems to just drop all script ability entirely and says "future research" but i think i have a way to do checklocktimeverify without breaking any of his crypto
+14:16 <andytoshi> (basically with the output you sign "after block X, this output should be replaced with this other one, then you do some sort of proof that the other one commits to the same value. just signing with the difference is sufficient)
+14:18 <andytoshi> then i _think_ you can do multisig in the standard schnorr way, though it's a PITA, you've gotta interactively create the rangeproof and stuff (need to look into this more)
+14:49 <lmatteis> i love how papers are shared as .txt :)
+16:11 * nsh blinks
+16:31 <nsh> andytoshi, 'So instead, we allow the transaction to sum to a nonzero value k*G, and require a signature of an empty string with this as key, to prove its amount component is zero.'
+16:32 <nsh> i'm not sure how this solves the problem of nonzero sum
+16:33 * nsh continues reading
+16:34 <andytoshi> nsh: if the sum is nonzero this "k*G" value will be k*G + something*H, and it'll be impossible for anyone to sign with that
+16:35 <nsh> oh, hmm
+16:37 * nsh nods
+16:38 * nsh frowns
+16:40 <nsh> i'm sure it must become possible to forge more potential transactions the more aggregation there is. there might then be an attach where after enough blocks if the attacker had retained/obtained enough residual information about r-values used along the way they could recover someone's k
+16:40 <nsh> *attack
+16:41 <andytoshi> that would entail breaking discrete log
+16:42 <andytoshi> no matter how much information an attacker had
+16:42 <nsh> hmm
+16:46 <kanzure> andytoshi: did you look at this one? http://diyhpl.us/wiki/transcripts/2016-july-bitcoin-developers-miners-meeting/dan-boneh/
+16:53 <nsh> andytoshi, how is the rangeproof validity is maintained in aggregation?
+16:53 <nsh> how are the ... validities
+16:53 <andytoshi> nsh: every unspent output has a rangeproof. every input is explicit
+16:54 <andytoshi> who cares what the actual history is, that's all you need to know to be assured there is no inflation
+16:54 <nsh> right
+16:54 <nsh> you just need to retain the utxo proofs
+16:54 <nsh> gotta be some way this is sneaky, otherwise it's too good to be true...
+16:55 <andytoshi> hah, yeah, i know the feeling
+16:55 <nsh> :)
+16:55 <andytoshi> so one thing instagibbs pointed out to me offline is that you can lie to new users about the -age- of unspent outputs
+16:55 <nsh> hm, right
+16:56 <andytoshi> like you create an output, spend it, later create the same output again. everyone who was online the whole time knows about the new output. but you tell a new user about the -old- one and not the -new- one
+16:56 <andytoshi> but it's hard for me to understand whether or not this actually matters..
+16:56 <nsh> but you could commit OOB to some timestamping ledger when you first got an output
+16:56 <nsh> and prove it later, i think
+16:56 <andytoshi> yeah, sure, or even a recent blockhash
+16:56 * nsh nods
+16:56 <nsh> biggest loss is script
+16:56 <andytoshi> this would make you more vulnerable to reorgs. would need to think about the tradeoffs here, it seems like this whole scheme is pretty fragile in the case of deep reorgs
+16:57 <nsh> oh yeah
+16:57 <instagibbs> I think it's interesting in any case that you get a rolling UTXO commitment essentially
+16:57 <nsh> i think there would have to be some conservative retention window
+16:57 <nsh> but we have equivalent stuff in bitcoin already for ageing block subsidy, etc.
+16:57 <andytoshi> yeah nsh like a few thousand blocks maybe. hard to say. on bitcoin we've never had more than 30 block reorg, on testnet we've had over 1000 a few times
+16:57 <nsh> so it'll not be any more complex than that really i think
+16:58 <nsh> reorg distribution is a function of PoW and game theory and economics and other stuff not treated
+17:00 <nsh> what about range proof reclamation, is that still possible?
+17:00 <nsh> (reuse for messaging/data)
+17:01 <andytoshi> yeah. it's hard to think about .. in bitcoin a 100 block reorg is about twice as hard as a 50 block one, and causes roughly twice the damage. but if there was a cliff where basically the whole system broke, that changes the incentives
+17:01 * nsh nods
+17:01 <andytoshi> nsh: still possible but you've gotta keep it forever cuz most nodes won't
+17:01 <nsh> aye, sure
+17:01 <andytoshi> in elements we use it just for ephemeral information anyway..
+17:03 <nsh> but this means you could build a twister-like ephemeral microblogging / IM into a client for essentially free
+17:03 <andytoshi> yep
+17:03 <nsh> and highly censorship resistant :)
+17:03 <nsh> well, depending on hashpower
+17:03 <nsh> so that's neat :)
+17:04 <nsh> (and dependent on enough nodes for accessibility saturation)
+17:04 <andytoshi> well, publishing stuff is hard .. if you reveal the encryption key that exposes the value
+17:04 <nsh> you can do it for the cost of fees
+17:05 <nsh> with 0 valued transactions, no?
+17:05 <andytoshi> ah, yes
+17:05 <andytoshi> or 1 valued transactions, he gives some reason there not to allow 0-valued outputs
+17:05 <nsh> right
+17:06 <andytoshi> (because they can be made to sum to 0, and be hidden from some users, and you've got a consensus failure.)
+17:06 <nsh> hmm
+17:06 <nsh> how do you know that/when you have the whole utxo collected from the network?
+17:07 <andytoshi> nsh: when everything adds up to 0, you've got everything
+17:07 <nsh> relative to the most recent block?
+17:07 <nsh> ok
+17:07 <andytoshi> (but if some subset could add up to 0 itself, which can only be done with specially crafted 0-value outputs, then this actually wouldn't do it)
+17:08 <andytoshi> nsh: so i think how this would work is that you do this magic compression thing to get all the blocks up to $tip - 5000 or something, and make sure the utxoset you're given at that block adds up to 0
+17:08 <andytoshi> then for the latest 5000 blocks, you download the entire blocks and play it forward
+17:08 * nsh nods
+17:08 <nsh> there's probably room for some spv trade-off on that parameter too
+17:09 <nsh> or light node
+17:09 <nsh> (at least somewhat better than the degree to which people trust bc.i, etc.)
+17:09 <andytoshi> i think the tradeoff is about reorg resistance
+17:10 <andytoshi> and about how much room you have to be lied to about coin age
+17:10 * nsh nods
+17:11 <nsh> not clear to me yet why only 0 transactions can be split into positive/negative and not any other sum
+17:12 <andytoshi> because only 0-valued outputs can be negated and still be rangeproofed to be in [0, 2^64]
+17:12 <nsh> oh right
+17:12 <nsh> heh
+17:12 c0rw1n is now known as GreenBat
+17:12 <nsh> that's very quirky
+17:12 GreenBat is now known as c0rw1n
+17:12 <nsh> i guess maths can be quirky
+17:14 <nsh> interesting q: '2. We require user to check all k*G values, when in fact all that is needed is that their sum is of the form k*G. Instead of using signatures is there another proof of discrete logarithm that could be combined?
+17:15 <nsh> oh, the badUTXOs DoS is nontrivial too
+17:16 <andytoshi> mm, that one might actually be trivial, if everyone uses "round numbers" as anchor points you can ask other nodes which utxos in a given block were legit
+17:16 <nsh> any node can poison the set and it's computationally hard to know which tx broke the sum
+17:16 <nsh> hmm
+17:16 <nsh> not sure i follow
+17:16 <andytoshi> like nodes would have the real blockhash then a "pruned blockhash" representing the block as it stood at height 20000 or something
+17:17 <andytoshi> and if a node is suspicious, it can compare its "pruned blockhash" with that of other nodes
+17:17 <nsh> hmmm
+17:18 <andytoshi> (this was the first idea i came up with, maybe it's broken, or maybe there's some better way)
+17:18 <nsh> sounds like it would work, but unsure of interaction complexity vs. penetration of malicious nodes
+17:19 <andytoshi> kanzure: not yet, sorry
+17:19 <kanzure> hmph
+17:23 <kanzure> well you could always publish and say "oh also the asset type", if you feel too bad about publishing your draft on this
+17:23 <andytoshi> kanzure: my draft on the mimblewimble stuff?
+17:24 <andytoshi> i didn't even have a draft, i just had most of the owas stuff in my head :P
+17:24 <kanzure> for some reason i sort of assumed you were working on aggregatable signatures for confidential transactions
+17:24 <andytoshi> no kidding
+17:24 <andytoshi> no, til a week or so ago i thought that'd require pairing .. i maybe talked about it, but i always thought it would require pairing so the result wasn't very interesting to me
+17:27 <nsh> so what has replaced the role of pairing here, exactly?
+17:27 <nsh> it's just pederson to the hilt i guess
+17:27 <andytoshi> hah, yeah, "pedersen to the hilt"
+17:27 <nsh> :)
+17:53 <kanzure> there is an interesting method for parasitic colored coins that was recently mentioned to me, it's not my construction and i don't know who mentioned it to me, but basically the way it works is that you can use the existence of certain individual UTXOs as a way to store information about the status of the colored coins
+18:13 <maaku_> kanzure that was from gmaxwell and sipa via me
+20:01 roidster is now known as Guest67303
+20:02 Guest67303 is now known as roidster
+21:44 <andytoshi> re mimblewimble, it's not quite OWAS because it's possible to separate out the transaction .. you have these k*G values which represent the excess, so you just need to find subsets of inputs and outputs that sum to each one
+21:45 <andytoshi> this is the subset-sum problem which is NP-hard in general, but might not be for many specific cases
+21:46 <andytoshi> having said that, the knowers of specific k*G values can interact to combine their transactions, which would make this much harder. an implementation of mimblewimble should maybe have network messages for doing this
+21:46 <andytoshi> err, not combine transactions, just combine their k*G values. the actual transactions don't need to be involved at all
+22:02 <andytoshi> ah, there's a simple fix, publish k1*G and k2, sign with k1*G but make the transaction excess be (k1 + k2)*G
+22:02 <andytoshi> and when combining transactions all the k2's just get added together
+23:15 zwick is now known as ftknox
