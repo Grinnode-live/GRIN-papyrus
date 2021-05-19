@@ -19,3 +19,7 @@
 |  	|  	| Devastating inflation bug caught early by Grin++. $250k bounty awarded to David Burkett. 	| https://forum.grin.mw/t/ann-bug-bounty-awarded-to-david-burkett-grin/8672 	|
 |  	|  	| Voting for community candidates started. Still ongoing. 	| https://forum.grin.mw/t/call-for-grin-community-candidates-for-additional-fund-granting-control/8521/4 	|
 |  	|  	| Grin meme contest. 	| https://forum.grin.mw/t/announcing-grin-it-to-win-it-best-meme-bounty/8701 	|
+
+<hr>
+
+Please help keep this list up to date by sending a new pull-request.
