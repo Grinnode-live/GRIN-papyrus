@@ -2,6 +2,7 @@
 |-|-|-|
 | 2019-01-17 | Obelisk announces the GRN1, the first ASIC for Grin’s ASIC-friendly PoW (now cancelled). | https://medium.com/obelisk-blog/the-obelisk-grn1-an-asic-for-grin-1d1ff580a19d |
 | 2019-02-01 | Ignotus expresses his disappointment in the greedy industry around Grin.<sup>1</sup> Within the same day, Yeastplume’s campaign quickly gets fully funded.<sup>2</sup> | 1: https://forum.grin.mw/t/solved-early-disappointments/3682 <br> 2: https://forum.grin.mw/t/solved-early-disappointments/3682/54 |
+| 2019-02-14 | Grin is listed on Poloniex exchange. Poloniex pledges a portion of all Grin transaction fees to the Grin General Fund for a year. | https://medium.com/circle-blog/poloniex-lists-grin-commits-to-share-transaction-fees-for-1-year-9163a3d9fb22 |
 | 2019-02-18 | First beta release of Grin++ node. | https://forum.grin.mw/t/grin-is-live-on-windows/4136 |
 | 2019-03-19 | First beta release of Grin++ wallet. | https://forum.grin.mw/t/announcing-the-grin-wallet-finally/4546 |
 | 2019-05-07 | Anonymous donator grants 50 BTC (from a 2010 coinbase block!) to the Grin General Fund. | https://www.coindesk.com/privacy-cryptocurrency-grin-receives-mysterious-300k-bitcoin-donation |
@@ -23,6 +24,7 @@
 | 2020-08-25 | Grin community admin's funds stolen from Kucoin. | https://reddit.com/r/kucoin/comments/ih5res/kucoin_account_hacked/ |
 | 2020-11-08 | 51% attacked through NiceHash. Community funded instance of the Grin NiceHash Defender bot created. | https://github.com/Grinnode-live/grinnode.live/blob/master/documentation/attacks/2020_11_reorg-51-percent.md https://grindefender.online/ |
 | 2020-11-09 | Grin Hub Telegram community moved to GrinPrivacy. | https://twitter.com/grin_privacy/status/1325616441719054336 |
+| 2020-11-24 | Grin is delisted from Poloniex exchange due to significant technical challenges and the 51% attack on the Grin network. | https://support.poloniex.com/hc/en-us/articles/360059338333-November-2020-Asset-Delistings |  
 | 2020-12-18 | Early, exclusive sale for the G1-Mini to grin forum users. | https://forum.grin.mw/t/ended-sales-in-forum-for-ipollo-g1-mini-miner-with-exclusive-discount-and-20-donation-promise/8089 |
 | 2020-12-19 | Grin bug challenge hosted by grinnode.live in preparation for the final hard fork. | https://grinnode.live/challenge/1 |
 | 2021-01-16 | Grin forked to the last of the scheduled hard fork on Jan 16, 2021 after 2 long years. | https://forum.grin.mw/t/grin-v5-0-0-network-upgrade-hard-fork-4-january-2021/7895 |
