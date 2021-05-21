@@ -1,11 +1,13 @@
 | Date | Details | References |
 |-|-|-|
+| 2019-01-17 | Obelisk announces the GRN1, the first ASIC for Grin’s ASIC-friendly PoW (now cancelled). | https://medium.com/obelisk-blog/the-obelisk-grn1-an-asic-for-grin-1d1ff580a19d |
 | 2019-02-01 | Ignotus expresses his disappointment in the greedy industry around Grin.<sup>1</sup> Within the same day, Yeastplume’s campaign quickly gets fully funded.<sup>2</sup> | 1: https://forum.grin.mw/t/solved-early-disappointments/3682 <br> 2: https://forum.grin.mw/t/solved-early-disappointments/3682/54 |
 | 2019-02-18 | First beta release of Grin++ node. | https://forum.grin.mw/t/grin-is-live-on-windows/4136 |
 | 2019-03-19 | First beta release of Grin++ wallet. | https://forum.grin.mw/t/announcing-the-grin-wallet-finally/4546 |
 | 2019-05-07 | Anonymous donator grants 50 BTC (from a 2010 coinbase block!) to the Grin General Fund. | https://www.coindesk.com/privacy-cryptocurrency-grin-receives-mysterious-300k-bitcoin-donation |
 | 2019-06-23 | Ignotus disappears. | https://forum.grin.mw/t/on-ignos-absence/5301 |
 | 2019-07-14 | The Grin community creates the perfect listing application for Binance. | https://forum.grin.mw/t/binance-listing/5258/6 |
+| 2019-07-19 | Obelisk cancels the GRN1 due to barriers in getting enough funding to finish the project. | https://medium.com/obelisk-blog/grn1-cancellation-announcement-54782c6e3e83 |
 | 2019-08-02 | Ignotus pops back in for a bit of fun trolling. His last words. | https://forum.grin.mw/t/i-am-ignotus-in-dedication-to-ignotus-peverell/5676/18 |
 | 2019-10-05 | Website redesigned and moved to grin.mw | https://github.com/mimblewimble/site/commit/d0ef84efb081176a5826b6d1d9f133c0f378b457 |
 | 2019-11-11 | A SECOND anonymous 50 BTC (from another 2010 coinbase block) is donated to the Grin General Fund. | https://forum.grin.mw/t/donation-to-the-grin-general-fund-nov-11/6446 |
