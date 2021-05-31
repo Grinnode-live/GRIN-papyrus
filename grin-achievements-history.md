@@ -1,6 +1,7 @@
 | Date | Details | References |
 |-|-|-|
 | 2016-08-01 | User `majorplayer` logs onto the #bitcoin-wizards IRC channel and drops an .onion link to the original Mimblewimble document authored under the pseudonym Tom Elvis Jedusor. | https://gnusha.org/bitcoin-wizards/2016-08-01.log |
+| 2016-08-02 | Andrew Poelstra (`andytoshi`) and Bryan Bishop (`kanzure`) verify the Mimblewimble text the next morning<sup>1</sup> and rehost it<sup>2</sup>. | 1: https://gnusha.org/bitcoin-wizards/2016-08-02.log <br> 2: https://download.wpsoftware.net/bitcoin/wizardry/mimblewimble.txt |
 | 2019-01-17 | Obelisk announces the GRN1, the first ASIC for Grin’s ASIC-friendly PoW (now cancelled). | https://medium.com/obelisk-blog/the-obelisk-grn1-an-asic-for-grin-1d1ff580a19d |
 | 2019-02-01 | Ignotus expresses his disappointment in the greedy industry around Grin.<sup>1</sup> Within the same day, Yeastplume’s campaign quickly gets fully funded.<sup>2</sup> | 1: https://forum.grin.mw/t/solved-early-disappointments/3682 <br> 2: https://forum.grin.mw/t/solved-early-disappointments/3682/54 |
 | 2019-02-14 | Grin is listed on Poloniex exchange. Poloniex pledges a portion of all Grin transaction fees to the Grin General Fund for a year. | https://medium.com/circle-blog/poloniex-lists-grin-commits-to-share-transaction-fees-for-1-year-9163a3d9fb22 |
