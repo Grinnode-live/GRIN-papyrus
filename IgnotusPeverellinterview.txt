@@ -1,0 +1,39 @@
+Grin Founder “Ignotus Peverell” on Life After Launch, and the Path ForwardBy David Z. Morris	02.27.2019 
+
+In January, the new privacy-focused cryptocurrency Grin launched to much fanfare. The currency’s founder, following in the footsteps of bitcoin creator Satoshi Nakamoto, is known only by the pseudonym Ignotus Peverell (a name lifted from the Harry Potter books). We asked Peverell via email about how things have been going since the launch—and what the rest of the cryptosphere can learn from his experience. This conversation has been lightly edited for clarity.
+
+First, how is the post-launch going?
+Very well so far. On the technical side there haven’t been any major issues, and the Grin community has been growing rapidly. Of course we’re still very early on and there is still a lot of work left, mostly around user experience and performance improvements. And there are a few more radical improvements on the research side that could be promising in the future.
+
+What was the thinking behind the decision to make Grin entirely community-driven and nonprofit, at a time (pre-bust) when hype was so intense around anything blockchain or cryptocurrency related?
+First, there were fairly obvious signs of overheating. Second, I was very uncomfortable with all the moral hazard existent in most new projects. Despite what can surface in various articles and reports, there is no free money if you prefer to stay on the right side of the law. Accepting extremely large amounts in ICOs results in extremely large headaches. I prefer to focus on creating something I believe in, and keep building it over time. The approach currently adopted in Grin seemed the best I could think of to achieve that and keep both headaches and noise as far away as possible.
+
+Why do you believe the world needs a(nother) privacy currency?
+I was generally dissatisfied with the direction of most cryptocurrencies at the time, privacy-oriented or not. And in some ways still am. By now, it seems we have a clear achievable goal for cryptocurrencies: Make better money. And there is a compelling and fairly obvious set of characteristics that would require: digital, private, trustworthy (by which I mean secure, and censorship resistant), and a few other more minor ones. But instead, most of our field is chasing feature check boxes to capture more froth. To be clear, I do have a lot of respect for projects that are trying to push research forward in what can be done. But those should be considered research, instead of a huge diversion.
+
+"There is no evidence that bitcoin's supply curve is optimal. But there is a growing body of solid research showing that several aspects of it are problematic."
+
+I’m no maximalist, but I do believe in the bitcoin ideals. But bitcoin is 10 years old now, it’s become impossible to change meaningfully and those 10 years represent a century given how much has been researched and developed since. When the MimbleWimble white paper was published, it seemed like a good base to attack the goal head on.
+
+Related: All the Ways Grin and Beam Take Crypto Back to Its Roots
+
+The most interesting economic decision in Grin’s design was to make the supply curve “inflationary,” at least in theory. Do you find bitcoiners’ fear of inflation and love of “hard money” compelling?
+Not really. There is no evidence that bitcoin’s supply curve is optimal. But there is a growing body of solid research showing that several aspects of it are problematic. To be honest, I have a pretty poor opinion of where the field of economics is generally at right now (not to say there aren’t any promising directions) as well. And so pragmatically, the best line to walk on seems to be only trusting strategies that have reasonably been proven to be true, either empirically or with solid research, and in the absence of such positions, pick the simplest rational solution. Too much early supply is scammy and quickly indistinguishable from a pre-mine. Tail emissions are more secure.
+
+With all that taken into account, constant emission can be shown to not be wrong, be simpler, create far less market uncertainty (aka “halvening” events), fair, etc. What’s not to like?
+
+Beam provided some support for Grin’s security audit. How do you view the relationship between the two projects, which share some technical foundations?
+A common misconception is that MimbleWimble describes a full cryptocurrency solution and therefore tend to lump Beam and us in the same basket. But the white paper is actually really short and only specifies a small part of the blockchain format. So even if a lot of our design decisions build on MimbleWimble, practically I see Grin as much closer to Monero or bitcoin. We’re thankful for Beam’s support to Grin’s development, as well as all the friendly projects and companies that continue supporting us.
+
+You remain anonymous, at a time when that’s much rarer than it used to be—hell, the lead dev of the current biggest privacy coin regularly posts video from inside his own house. What motivated you to kick it old-school?
+There seemed to be no downside. I didn’t want the stress of being a public figure in this space, for myself and those close to me. By being anonymous, I’m also much less of a victim for people who’d want to influence me or profit indirectly from my position. I can be a good layer of insulation for contributors and developers directly involved in Grin: People can blame me instead of them. My anonymity avoids too much polarization, keeping the project more decentralized. I can’t appear in public, do conferences and podcasts or tweet and that’s a good thing. It means Grin has many public figures instead of just one. It helps keep egos in check, as well.
+
+"I would like all entities interested in Grin to go beyond the regular rivalries and competition that can arise in the space and recognize that they can all benefit by being constructive."
+
+When the Grin developer known as Yeastplume set out to raise funds for his work, there was a slightly muted response, and you expressed disappointment. That effort has since exceeded its goal, but are you concerned about getting continued development funding in the longer term?
+The community has come around multiple times and has been supportive. We’ll need a community that continues being very supportive for Grin to succeed. I would like all entities interested in Grin to go beyond the regular rivalries and competition that can arise in the space and recognize that they can all benefit by being constructive. For example, a variety of companies with very hostile relationships all contribute directly and indirectly to the development of the Linux kernel. I would like this to be the case for Grin as well. When Grin grows, we can all grow with it. As for myself, I’m getting by for now. If I need anything, I’ll let people know.
+
+Finally, Grin has been seen as a kind of symbolic return-to-roots for crypto in the wake of the bubble/crash. What advice would you give the broader industry to help keep the development and use of crypto/blockchain going over the next five to 10 years?
+State your goal clearly and keep pushing toward it. Be patient. Be very wary of too much affluence, it’s a distraction. We’re developing open source projects that happen to deal with money. Adopt the open source ethos first, it’s a proven model. Be humble and exceedingly nice.
+
+I’m convinced we really have a chance at making a broad positive impact on many people’s lives. Let’s not get lost in the weeds.
